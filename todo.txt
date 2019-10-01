@@ -1,0 +1,4 @@
+- Create classes Education, Experience, Projects
+- Create a generect CustomListing to show a certain item
+- Use customListing to list educational experiences
+
