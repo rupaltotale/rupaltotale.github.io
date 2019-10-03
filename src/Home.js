@@ -56,6 +56,22 @@ class Home extends Component {
     );
   }
 
+  renderSubmitButton() {
+    return (
+      <Button
+        style={{ float: "right" }}
+        variant="primary"
+        type="button"
+        onClick={() => {
+          // TODO: Implement this functionality
+          console.log("Sumbitting form...");
+        }}
+      >
+        Submit
+      </Button>
+    );
+  }
+
   renderContactMe() {
     return (
       <div>
@@ -106,19 +122,7 @@ class Home extends Component {
                 />
               </Col>
               <Col xs md={{ span: 3, offset: 6 }}>
-                <Button
-                  style={{ float: "right" }}
-                  variant="primary"
-                  type="button"
-                  onClick={() => {
-                    window.open(
-                      "https://github.com/rupaltotale",
-                      "_blank" // <- This is what makes it open in a new window.
-                    );
-                  }}
-                >
-                  Submit
-                </Button>
+                {this.renderSubmitButton()}
               </Col>
             </Row>
           </form>
