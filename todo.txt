@@ -1,4 +1,4 @@
 - Create classes Education, Experience, Projects
-- Create a generect CustomListing to show a certain item
-- Use customListing to list educational experiences
+- Create a generect CardListing to show a certain item
+- Use CardListing to list educational experiences
 
