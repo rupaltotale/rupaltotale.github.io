@@ -6,7 +6,8 @@ import {
   Col,
   Image,
   Jumbotron,
-  FormControl
+  FormControl,
+  Button
 } from "react-bootstrap";
 import { FaArrowDown } from "react-icons/fa";
 import Select from "react-select";
@@ -22,7 +23,7 @@ class Home extends Component {
     return (
       <div>
         <h2>About Me</h2>
-        <Jumbotron>
+        <Jumbotron className="jumbo">
           <Container>
             <Row>
               <Col xs={12} md={3}>
@@ -30,19 +31,22 @@ class Home extends Component {
               </Col>
               <Col xs={12} md={9}>
                 <h5>Hi, I am Rupal.</h5>
-                <p>I am a computer science student at Cal Poly presently.</p>
                 <p>
-                  I like to work on interesting coding projects, teach, hike,
-                  and read classic fiction. Besides computer sicence, I deeply
-                  enjoy math, philosophy, and history.
+                  {"I am a computer science student at Cal Poly presently."}
                 </p>
                 <p>
-                  Feel free to explore the projects I have worked on, the
+                  {`I like to work on interesting coding projects, teach, hike,
+                  and read classic fiction. Besides computer sicence, I deeply
+                  enjoy philosophy, and history.`}
+                </p>
+                <p>
+                  {`Feel free to explore the projects I have worked on, the
                   classes I have taken, and the places I have worked at over the
                   last two years on this website. If you have any suggestions
-                  for me, please do reach out to me (contact details{" "}
+                  for me or exciting oppurtunities you believe I would be a good
+                  fit for, please do reach out (contact details`}{" "}
                   <FaArrowDown />
-                  )!
+                  {`)!`}
                 </p>
               </Col>
             </Row>
@@ -80,21 +84,21 @@ class Home extends Component {
             <br />
             {/* Submit Button */}
             <Row>
-              <Col xs md="1">
+              <Col xs md={1}>
                 <SocialIcon
                   url="https://www.linkedin.com/in/rupal-totale-098360141/"
                   target="_blank"
                   rel="noopener noreferrer"
                 />
               </Col>
-              <Col xs md="1">
+              <Col xs md={1}>
                 <SocialIcon
                   url="https://github.com/rupaltotale"
                   target="_blank"
                   rel="noopener noreferrer"
                 />
               </Col>
-              <Col xs md="1">
+              <Col xs md={1}>
                 <SocialIcon
                   url="mailto:rupaltotale@gmail.com"
                   target="_blank"
@@ -102,12 +106,19 @@ class Home extends Component {
                 />
               </Col>
               <Col xs md={{ span: 3, offset: 6 }}>
-                <input
-                  type="button"
-                  value="Submit"
-                  onClick={() => {}}
+                <Button
                   style={{ float: "right" }}
-                />
+                  variant="primary"
+                  type="button"
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/rupaltotale",
+                      "_blank" // <- This is what makes it open in a new window.
+                    );
+                  }}
+                >
+                  Submit
+                </Button>
               </Col>
             </Row>
           </form>

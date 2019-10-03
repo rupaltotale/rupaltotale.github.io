@@ -21,7 +21,7 @@ class JumboListing extends Component {
         <Container>
           <Row>
             <Col xs={12} md={4}>
-              <Image src={this.props.galleryUrl} fluid rounded></Image>
+              {this.props.gallery}
             </Col>
             <Col xs={12} md={8}>
               {this.renderDescription()}
@@ -37,7 +37,7 @@ JumboListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  galleryUrl: PropTypes.string.isRequired,
+  gallery: PropTypes.element.isRequired,
   // Optional
   sourceCodeUrl: PropTypes.string
 };

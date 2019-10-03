@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import JumboListing from "./JumboListing";
+import { Image } from "react-bootstrap";
 
 export default class Education extends Component {
   static propTypes = {
@@ -19,7 +20,7 @@ export default class Education extends Component {
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate."
           ]}
           tags={["abc", "xyz", "123"]}
-          galleryUrl={MyPhoto}
+          gallery={<Image src={MyPhoto} fluid rounded></Image>}
           sourceCodeUrl={"https://github.com/rupaltotale"}
         />
       </div>
