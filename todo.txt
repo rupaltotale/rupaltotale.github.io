@@ -5,6 +5,7 @@
 + Tags for jumbo
 + Fix nav bar highlighting
 
+- Fix padding between image and description on Jumbo Listing
 - Phone number and email field on Home
 - Sumbit form functionality
 - Search functionality
