@@ -1,9 +1,10 @@
-- Create Experiences
-- Create a generect CardListing to show a certain item
++ Create Experiences
++ Create a generic CardListing to show a certain item
 - Create json file with data and use axios to get and render data
 - Phone number and email field on Home
 - Sumbit form functionalit
 - Search functionality
 - Tag search functionality
 - Fix nav bar highlighting
+- create image and components folder. Maybe even pages folder
 

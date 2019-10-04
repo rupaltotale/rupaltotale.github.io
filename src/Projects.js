@@ -4,10 +4,6 @@ import { CardDeck } from "react-bootstrap";
 import CardListing from "./CardListing";
 
 export default class Projects extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
-
   render() {
     return (
       <div className="container">

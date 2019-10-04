@@ -98,7 +98,7 @@ class Home extends Component {
               ]}
             />
             <br />
-            {/* Submit Button */}
+            {/* Social icons and Submit Button */}
             <Row>
               <Col xs md={1}>
                 <SocialIcon

@@ -4,10 +4,6 @@ import JumboListing from "./JumboListing";
 import { Image } from "react-bootstrap";
 
 export default class Education extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
-
   render() {
     const MyPhoto = require("./picture.png");
     return (

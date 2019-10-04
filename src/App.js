@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  CardDeck
-} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import Home from "./Home";
-import CardListing from "./CardListing";
-import JumboListing from "./JumboListing";
 import Education from "./Education";
+import Experience from "./Experience";
 import Projects from "./Projects";
-
-function Experience() {
-  return <h2>Experience</h2>;
-}
 
 class App extends Component {
   render() {

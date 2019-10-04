@@ -16,14 +16,15 @@ class JumboListing extends Component {
 
   render() {
     return (
-      <Jumbotron>
-        <h3 style={{ textAlign: "center" }}>{this.props.title}</h3>
+      <Jumbotron className={this.props.type === "ShadowBox" ? "jumbo" : ""}>
         <Container>
+          <h3>{this.props.title}</h3>
           <Row>
             <Col xs={12} md={4}>
               {this.props.gallery}
             </Col>
             <Col xs={12} md={8}>
+              <br></br>
               {this.renderDescription()}
             </Col>
           </Row>
@@ -39,7 +40,8 @@ JumboListing.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   gallery: PropTypes.element.isRequired,
   // Optional
-  sourceCodeUrl: PropTypes.string
+  sourceCodeUrl: PropTypes.string,
+  type: PropTypes.oneOf(["GrayBox", "ShadowBox"])
 };
 
 export default JumboListing;
