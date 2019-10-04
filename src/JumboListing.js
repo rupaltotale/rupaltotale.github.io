@@ -20,11 +20,10 @@ class JumboListing extends Component {
         <Container>
           <h3>{this.props.title}</h3>
           <Row>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={5}>
               {this.props.gallery}
             </Col>
-            <Col xs={12} md={8}>
-              <br></br>
+            <Col xs={12} md={7}>
               {this.renderDescription()}
             </Col>
           </Row>

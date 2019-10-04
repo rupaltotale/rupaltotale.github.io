@@ -30,7 +30,8 @@ class Experience extends Component {
           description={experience.description}
           tags={experience.tags}
           gallery={
-            <Image src={`./${experience.gallery}.png`} fluid rounded></Image>
+            // `./${experience.gallery}.png`
+            <Image src={experience.gallery} fluid rounded></Image>
           }
           sourceCodeUrl={"https://github.com/rupaltotale"}
           type={"ShadowBox"}
