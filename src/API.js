@@ -1,38 +1,43 @@
-import Tabletop from 'tabletop';
+import Tabletop from "tabletop";
 
 export default class API {
-	constructor(firstname, lastname) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-	}
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
 
-	getExperiences(completion) {
-		Tabletop.init({
-			key: '19btLS6x866LNmlm-Gud_3w_j-gAJzNFQ-tN6Uoe5iPw',
-			callback: (googleData) => {
-				const experiences = [];
-				var experience = null;
-				for (var i = 0; i < googleData.length; i++) {
-					if (googleData[i].id !== '') {
-						if (experience) experiences.push(experience);
-						experience = {
-							id: googleData[i].id,
-							title: googleData[i].title,
-							description: [ googleData[i].description ],
-							tags: googleData[i].tags.split(','),
-							gallery: googleData[i].gallery,
-							startTime: googleData[i].startTime,
-							endTime: googleData[i].endTime !== '' ? googleData[i].endTime : null
-						};
-					} else if (googleData[i].description !== '') {
-						experience.description.push(googleData[i].description);
-						// if (googleData[i].tags !== '') experience.tags.push(googleData[i].tags);
-					}
-				}
-				experiences.push(experience);
-				completion(experiences);
-			},
-			simpleSheet: true
-		});
-	}
+  getDataAsObjects(data) {
+    const dataObjects = [];
+    var item = null;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].id !== "") {
+        if (item) dataObjects.push(item);
+        item = {
+          id: data[i].id,
+          title: data[i].title,
+          description: [data[i].description],
+          tags: data[i].tags.split(","),
+          gallery: data[i].gallery,
+          startTime: data[i].startTime,
+          endTime: data[i].endTime !== "" ? data[i].endTime : null
+        };
+      } else if (data[i].description !== "") {
+        item.description.push(data[i].description);
+        // if (experiencesData[i].tags !== '') item.tags.push(experiencesData[i].tags);
+      }
+    }
+    dataObjects.push(item);
+    return dataObjects;
+  }
+
+  getExperiences(completion) {
+    Tabletop.init({
+      key: "19btLS6x866LNmlm-Gud_3w_j-gAJzNFQ-tN6Uoe5iPw",
+      simpleSheet: false,
+      callback: (data, tabletop) => {
+        const experiencesData = tabletop.sheets("Experiences").elements;
+        completion(this.getDataAsObjects(experiencesData));
+      }
+    });
+  }
 }

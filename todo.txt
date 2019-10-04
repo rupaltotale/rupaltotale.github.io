@@ -23,6 +23,7 @@
 - toggle images on and off
 - Loading and imports: https://reacttraining.com/react-router/web/guides/code-splitting. Look into webpack and babel
 - Scroll to top
+- See pictures and blog option (as a button)
 
 
 
