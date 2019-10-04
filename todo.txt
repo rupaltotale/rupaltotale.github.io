@@ -3,13 +3,12 @@
 + Make tags comma spaced
 + Create json file with data and use axios to get and render data
 + Tags for jumbo
-
++ Fix nav bar highlighting
 
 - Phone number and email field on Home
 - Sumbit form functionality
 - Search functionality
 - Tag search functionality
-- Fix nav bar highlighting
 - create image and components folder. Maybe even pages folder
 - Syling of jumbo
 - Get all the data in app.js
@@ -18,8 +17,19 @@
 - restyle tags
 - Description for each skill
 - multiple searches?
-- FIX ERROS
+- FIX ERRORS regarding nesting of <a> and <p>
 - location?
 - toggle images on and off
+- Loading and imports: https://reacttraining.com/react-router/web/guides/code-splitting. Look into webpack and babel
+- Scroll to top
 
 
+
+BIG ADDITIONS
+- Blog and youtube videos: 
+-- how to setup vim
+-- how to setup vscode
+-- how to create an npm package
+TIP: A react series!
+-- how to publish a "static" react app with github pages
+-- how to use google sheets as a CMS for react app (not recommended for apps with versatile data)
