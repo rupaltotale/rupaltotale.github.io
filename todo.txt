@@ -19,6 +19,7 @@
 - Description for each skill
 - multiple searches?
 - FIX ERROS
--location?
+- location?
+- toggle images on and off
 
 
