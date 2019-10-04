@@ -11,7 +11,7 @@
 - Search functionality
 - Tag search functionality
 - create image and components folder. Maybe even pages folder
-- Syling of jumbo
+- Syling of jumbo gray
 - Get all the data in app.js
 - time period with like a calendar icon for items
 - tooltip for tag saying if they click on it, search will well, search for tag
@@ -24,6 +24,7 @@
 - Loading and imports: https://reacttraining.com/react-router/web/guides/code-splitting. Look into webpack and babel
 - Scroll to top
 - See pictures and blog option (as a button)
+- sortBy recent? Figure this out
 
 
 
