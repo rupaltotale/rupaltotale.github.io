@@ -49,24 +49,24 @@ class Home extends Component {
 
 	async handleSubmit(e) {
 		e.preventDefault();
-		console.log('Submitting form');
-		const name = 'Jane Doe';
-		const email = 'janedoe.gmail.com';
-		const message = 'Lorem ipsum';
-		const form = await axios
-			.post('/api/form', {
-				name,
-				email,
-				message
-			})
-			.then((response) => {
-				if (response.data.msg === 'success') {
-					alert('Message Sent.');
-					this.resetForm();
-				} else if (response.data.msg === 'fail') {
-					alert('Message failed to send.');
-				}
-			});
+		// console.log('Submitting form');
+		// const name = 'Jane Doe';
+		// const email = 'janedoe.gmail.com';
+		// const message = 'Lorem ipsum';
+		// const form = await axios
+		// 	.post('https://usebasin.com/f/845c279d47ef.json', {
+		// 		name,
+		// 		email,
+		// 		message
+		// 	})
+		// 	.then((response) => {
+		// 		if (response.data.msg === 'success') {
+		// 			alert('Message Sent.');
+		// 			this.resetForm();
+		// 		} else if (response.data.msg === 'fail') {
+		// 			alert('Message failed to send.');
+		// 		}
+		// 	});
 	}
 
 	renderSubmitButton() {
@@ -82,13 +82,41 @@ class Home extends Component {
 			<div>
 				<h2>Contact Me</h2>
 				<Jumbotron>
-					<form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+					<form
+						accept-charset="UTF-8"
+						action="https://usebasin.com/f/845c279d47ef"
+						enctype="multipart/form-data"
+						method="POST"
+						// onSubmit={this.handleSubmit.bind(this)}
+					>
 						{/* Name */}
 						<label>Full Name*</label>
-						<FormControl type="textarea" placeholder="Jane Doe..." className="mr-sm-2" />
+						<FormControl
+							type="textarea"
+							name="name"
+							placeholder="Jane Doe..."
+							className="mr-sm-2"
+							required
+						/>
 						{/* Message */}
 						<label>Message*</label>
-						<FormControl as="textarea" rows="3" />
+						<FormControl
+							as="textarea"
+							rows="3"
+							name="message"
+							placeholder="Jane Doe..."
+							className="mr-sm-2"
+							required
+						/>
+						{/* Email */}
+						<label>Email*</label>
+						<FormControl
+							type="textarea"
+							name="email"
+							placeholder="foo@bar.com"
+							className="mr-sm-2"
+							required
+						/>
 						{/* Rating*/}
 						<label>Rate the site?</label>
 						<Select
@@ -97,6 +125,7 @@ class Home extends Component {
 								{ label: '2 - No comment', value: 2 },
 								{ label: '3 - Good to go', value: 3 }
 							]}
+							name="rating"
 						/>
 						<br />
 						{/* Social icons and Submit Button */}
