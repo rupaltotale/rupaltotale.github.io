@@ -18,7 +18,7 @@ class Experience extends Component {
 					tags={experience.tags}
 					gallery={
 						// `./${experience.gallery}.png`
-						<Image src={experience.gallery} fluid rounded />
+						<Image style={{ padding: 10 }} src={experience.gallery} fluid rounded />
 					}
 					startTime={experience.startTime}
 					endTime={experience.endTime}

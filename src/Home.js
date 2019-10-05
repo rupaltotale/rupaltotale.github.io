@@ -4,6 +4,7 @@ import { Container, Row, Col, Image, Jumbotron, FormControl, Button } from 'reac
 import { FaArrowDown } from 'react-icons/fa';
 import Select from 'react-select';
 import { SocialIcon } from 'react-social-icons';
+import axios from 'axios';
 
 // create a component
 class Home extends Component {
@@ -46,17 +47,33 @@ class Home extends Component {
 		);
 	}
 
+	handleSubmit(e) {
+		e.preventDefault();
+		console.log('Submitting form');
+		const name = 'Jane Doe';
+		const email = 'janedoe.gmail.com';
+		const message = 'Lorem ipsum';
+		axios({
+			method: 'POST',
+			url: 'http://localhost:3000/send',
+			data: {
+				name: name,
+				email: email,
+				messsage: message
+			}
+		}).then((response) => {
+			if (response.data.msg === 'success') {
+				alert('Message Sent.');
+				this.resetForm();
+			} else if (response.data.msg === 'fail') {
+				alert('Message failed to send.');
+			}
+		});
+	}
+
 	renderSubmitButton() {
 		return (
-			<Button
-				style={{ float: 'right' }}
-				variant="primary"
-				type="button"
-				onClick={() => {
-					// TODO: Implement this functionality
-					console.log('Sumbitting form...');
-				}}
-			>
+			<Button style={{ float: 'right' }} variant="primary" type="submit">
 				Submit
 			</Button>
 		);
@@ -67,7 +84,7 @@ class Home extends Component {
 			<div>
 				<h2>Contact Me</h2>
 				<Jumbotron>
-					<form>
+					<form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
 						{/* Name */}
 						<label>Full Name*</label>
 						<FormControl type="textarea" placeholder="Jane Doe..." className="mr-sm-2" />
