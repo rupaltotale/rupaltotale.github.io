@@ -47,28 +47,26 @@ class Home extends Component {
 		);
 	}
 
-	handleSubmit(e) {
+	async handleSubmit(e) {
 		e.preventDefault();
 		console.log('Submitting form');
 		const name = 'Jane Doe';
 		const email = 'janedoe.gmail.com';
 		const message = 'Lorem ipsum';
-		axios({
-			method: 'POST',
-			url: 'http://localhost:3000/send',
-			data: {
-				name: name,
-				email: email,
-				messsage: message
-			}
-		}).then((response) => {
-			if (response.data.msg === 'success') {
-				alert('Message Sent.');
-				this.resetForm();
-			} else if (response.data.msg === 'fail') {
-				alert('Message failed to send.');
-			}
-		});
+		const form = await axios
+			.post('/api/form', {
+				name,
+				email,
+				message
+			})
+			.then((response) => {
+				if (response.data.msg === 'success') {
+					alert('Message Sent.');
+					this.resetForm();
+				} else if (response.data.msg === 'fail') {
+					alert('Message failed to send.');
+				}
+			});
 	}
 
 	renderSubmitButton() {
