@@ -25,6 +25,8 @@
 - Scroll to top
 - See pictures and blog option (as a button)
 - sortBy recent? Figure this out
+- Clean up code: refactor!!!, remove unneccesary comments, etc.
+- update readme: fill out sections, add references where needed
 
 
 

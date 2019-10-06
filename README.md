@@ -37,7 +37,7 @@ Here is how I set it up.
 1. Publish your Google Sheets to the web
    1. Open the File menu and click Publish to web
    2. Towards the bottom select Start publishing (the entire document)
-   3. Save your spreadsheet key. From the URL, your spreadsheet key will be the entire string after `/spreadsheets/d/KEY/edit#gid=0`
+   3. Save your spreadsheet key. From the URL, your spreadsheet key will be the KEY string in `/spreadsheets/d/KEY/edit#gid=0`
       ![image](https://miro.medium.com/max/2694/1*uTBIqOEH8f5JeQHTYHyBKg.png)
 2. Fetch data with tabletop on react app
    1. Install tabletop with npm: `npm install tabletop`
@@ -101,7 +101,7 @@ I use the following extensions when working with Javascript:
 
 - [Create a new React App - Facebook](https://reactjs.org/docs/create-a-new-react-app.html)
 - [Using React + Google Sheets as your CMS - Medium](https://medium.com/@ryan.mcnierney/using-react-google-sheets-as-your-cms-294c02561d59)
-- [Get Started with form-data](https://www.form-data.com/?form=86cf0c10-a4a4-4dff-8bf2-c6518c1d9cfe)
+- [Get started with form-data](https://www.form-data.com/?form=86cf0c10-a4a4-4dff-8bf2-c6518c1d9cfe)
 - [Form resources for static websites](https://gridsome.org/docs/guide-forms/)
 - [Submit a form with nodemailer and express](https://www.youtube.com/watch?v=EPnBO8HgyRU)
 - [Temporary email with Ethereal](https://ethereal.email/create)

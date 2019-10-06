@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
 import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import ContactForm from "./ContactForm";
+import ContactForm from "../Components/ContactForm";
+import ProfilePicture from "../Images/picture.png";
 
 // create a component
 class Home extends Component {
@@ -11,7 +12,6 @@ class Home extends Component {
   //     super(props);
   //   }
   renderAboutMe() {
-    const MyPhoto = require("./picture.png");
     return (
       <div>
         <h2>About Me</h2>
@@ -19,24 +19,20 @@ class Home extends Component {
           <Container>
             <Row>
               <Col xs={12} md={3}>
-                <Image src={MyPhoto} roundedCircle fluid />
+                <Image src={ProfilePicture} roundedCircle fluid />
               </Col>
               <Col xs={12} md={9}>
                 <h5>Hi, I am Rupal.</h5>
                 <p>
-                  {"I am a computer science student at Cal Poly presently."}
+                  {`I am a computer science student at Cal Poly presently. 
+                  I have dabbled with web and app development in the past through hackathons, internships, and personal projects.
+                  I would like to further explore these areas in the future by working on interesting and meaningful coding projects.`}
                 </p>
-                <p>
-                  {`I like to work on interesting coding projects, teach, hike,
-                  and read classic fiction. Besides computer sicence, I deeply
-                  enjoy philosophy, and history.`}
-                </p>
+                <p>{`Besides coding, I deeply enjoy teaching, reading, and star gazing.`}</p>
                 <p>
                   {`Feel free to explore the projects I have worked on, the
                   classes I have taken, and the places I have worked at over the
-                  last two years on this website. If you have any suggestions
-                  for me or exciting oppurtunities you believe I would be a good
-                  fit for, please do reach out (contact details`}{" "}
+                  last two years on this website. If you would like to connect with me, don't hesitate to shoot me a quick message (contact details`}{" "}
                   <FaArrowDown />
                   {`)!`}
                 </p>

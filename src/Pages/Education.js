@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import JumboListing from "./JumboListing";
+import JumboListing from "../Components/JumboListing";
 import { Image } from "react-bootstrap";
 
 export default class Education extends Component {
@@ -11,10 +11,10 @@ export default class Education extends Component {
         <JumboListing
           title={"Second Year Computer Science Major at Cal Poly, SLO"}
           description={[
-            "Junior academic standing with 4.0 major GPA and 3.98 overall GPA. Have made Dean's Honors list for all quarters attended and President's Honors list for the 2018-2019 school year.",
+            "Junior academic standing with 4.0 major GPA and 3.98 overall GPA. Have made Dean's Honors list for all quarters attended and President's Honors list for the 2018-2019 school year",
             "Active member of WISH, SWE, Hack4Impact, and Cal Poly App Development",
             "Intend to minor in Data Science and Math and get a Masters in Computer Science",
-            "Relvant coursework discussed below"
+            "Relevant coursework discussed below"
           ]}
           tags={["Java", "C", "Python"]}
           gallery={
