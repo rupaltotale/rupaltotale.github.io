@@ -1,7 +1,8 @@
 //import liraries
 import React, { Component } from 'react';
 import { Container, Row, Col, Image, Jumbotron, FormControl, Button } from 'react-bootstrap';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaArrowDown, FaCheckCircle } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 import Select from 'react-select';
 import { SocialIcon } from 'react-social-icons';
 import ContactForm from './ContactForm';
@@ -69,11 +70,51 @@ class Home extends Component {
 		// 	});
 	}
 
+	renderFormSubmitted(name, message, email, rating) {
+		return (
+			<Jumbotron style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+				<h3>Form submitted successfully</h3>
+				<IconContext.Provider value={{ color: 'green', className: 'global-class-name' }}>
+					<div style={{ padding: 10 }}>
+						<FaCheckCircle size={100} />
+					</div>
+				</IconContext.Provider>
+				<hr />
+				<h6 style={{ textAlign: 'center' }}>
+					Thank you for reaching out. I will get back to you through the provided email with a custom response
+					in around 5 business days. Here is what was submitted:
+				</h6>
+				<br />
+				<p>
+					<b>Name: </b> {name}
+				</p>
+				<p>
+					<b>Message: </b> {message}
+				</p>
+				<p>
+					<b>Email: </b> {email}
+				</p>
+				<p>
+					<b>Rating: </b> {rating ? rating : 'Not any'}
+				</p>
+			</Jumbotron>
+		);
+	}
+
 	render() {
+		const queryString = require('query-string');
+		const parsed = queryString.parse(this.props.location.search);
+		console.log(parsed);
 		return (
 			<div className="container">
 				{this.renderAboutMe()}
-				<ContactForm />
+
+				<h2>Contact Me</h2>
+				{parsed.submit ? (
+					this.renderFormSubmitted(parsed['?name'], parsed.message, parsed.email, parsed.rating)
+				) : (
+					<ContactForm />
+				)}
 			</div>
 		);
 	}
