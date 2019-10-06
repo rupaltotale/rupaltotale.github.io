@@ -71,7 +71,7 @@ class App extends Component {
           <Route path="/projects">
             <Projects />
           </Route>
-          <Route path="/:home?" component={Home} />
+          <Route path="/home" component={Home} />
 
           {/* If none of the previous routes render anything,
             this route acts as a fallback.
@@ -80,7 +80,7 @@ class App extends Component {
             the URL because all URLs begin with a /. So that's
             why we put this one last of all */}
           <Route path="/">
-            <Redirect to="/:home?" />
+            <Redirect to="/home" component={Home} />
           </Route>
         </Switch>
       </Router>

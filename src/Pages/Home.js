@@ -91,6 +91,7 @@ class Home extends Component {
   render() {
     const queryString = require("query-string");
     const parsed = queryString.parse(this.props.location.search);
+    console.log(parsed);
     return (
       <div className="container">
         {this.renderAboutMe()}
