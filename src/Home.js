@@ -48,24 +48,6 @@ class Home extends Component {
 
 	async handleSubmit(e) {
 		e.preventDefault();
-		// console.log('Submitting form');
-		// const name = 'Jane Doe';
-		// const email = 'janedoe.gmail.com';
-		// const message = 'Lorem ipsum';
-		// const form = await axios
-		// 	.post('https://usebasin.com/f/845c279d47ef.json', {
-		// 		name,
-		// 		email,
-		// 		message
-		// 	})
-		// 	.then((response) => {
-		// 		if (response.data.msg === 'success') {
-		// 			alert('Message Sent.');
-		// 			this.resetForm();
-		// 		} else if (response.data.msg === 'fail') {
-		// 			alert('Message failed to send.');
-		// 		}
-		// 	});
 	}
 
 	renderFormSubmitted(name, message, email, rating) {
@@ -102,7 +84,6 @@ class Home extends Component {
 	render() {
 		const queryString = require('query-string');
 		const parsed = queryString.parse(this.props.location.search);
-		console.log(parsed);
 		return (
 			<div className="container">
 				{this.renderAboutMe()}

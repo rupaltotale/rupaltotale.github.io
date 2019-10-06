@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Personal Website
 
-## Available Scripts
+- [My Personal Website](#my-personal-website)
+  - [How To](#how-to)
+    - [Create a web app with React](#create-a-web-app-with-react)
+      - [References](#references)
+    - [Use Google Sheets as CMS with tabletop.js](#use-google-sheets-as-cms-with-tabletopjs)
+      - [References](#references-1)
+    - [Submit forms with form-data](#submit-forms-with-form-data)
+      - [References](#references-2)
+    - [Host/deploy a react web app with GH Pages](#hostdeploy-a-react-web-app-with-gh-pages)
+      - [References](#references-3)
+    - [Use react-rouer for a more snappy web app](#use-react-rouer-for-a-more-snappy-web-app)
+      - [References](#references-4)
+  - [Workplace settings](#workplace-settings)
+    - [Editor: VS Code](#editor-vs-code)
 
-In the project directory, you can run:
+I made this "static" website with the popular web framework React. The web app is hosted on GitHub Pages and is thus static (at least the final product). I discuss how I implemented various features for this website below. 
 
-### `npm start`
+## How To
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Create a web app with React
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Some kind of intro
 
-### `npm test`
+1. Step 1
+2. Step 2
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### References
 
-### `npm run build`
+- [Example 1](http://example.com/ "Title")
+- [Example 2](http://example.com/ "Title")
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Use Google Sheets as CMS with tabletop.js
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Some kind of intro
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Step 1
+2. Step 2
 
-### `npm run eject`
+#### References
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Example 1](http://example.com/ "Title")
+- [Example 2](http://example.com/ "Title")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Submit forms with form-data
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Some kind of intro
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Step 1
+2. Step 2
 
-## Learn More
+#### References
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Get Started with form data](https://www.form-data.com/?form=86cf0c10-a4a4-4dff-8bf2-c6518c1d9cfe)
+- [Form resources for static websites](https://gridsome.org/docs/guide-forms/)
+- [Submit a form with nodemailer and express](https://www.youtube.com/watch?v=EPnBO8HgyRU)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Host/deploy a react web app with GH Pages
 
-### Code Splitting
+Some kind of intro
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. Step 1
+2. Step 2
 
-### Analyzing the Bundle Size
+#### References
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- [Example 1](http://example.com/ "Title")
+- [Example 2](http://example.com/ "Title")
 
-### Making a Progressive Web App
+### Use react-rouer for a more snappy web app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Use hash router for static pages
 
-### Advanced Configuration
+1. Step 1
+2. Step 2
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### References
 
-### Deployment
+- [Get started with react router](https://reacttraining.com/react-router/web/example/basic)
+- [Install react-router-dom with npm](https://www.npmjs.com/package/react-router-dom)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Workplace settings
 
-### `npm run build` fails to minify
+### Editor: VS Code
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I use the following extensions for react and react-native apps:
+
+- Prettier Now
+- Auto Import
+- ESLint
+- Reactjs code snippets
+- Import Cost
