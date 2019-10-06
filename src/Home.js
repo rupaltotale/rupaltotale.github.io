@@ -1,10 +1,8 @@
 //import liraries
 import React, { Component } from 'react';
-import { Container, Row, Col, Image, Jumbotron, FormControl, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image, Jumbotron } from 'react-bootstrap';
 import { FaArrowDown, FaCheckCircle } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import Select from 'react-select';
-import { SocialIcon } from 'react-social-icons';
 import ContactForm from './ContactForm';
 
 // create a component
