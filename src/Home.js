@@ -4,7 +4,7 @@ import { Container, Row, Col, Image, Jumbotron, FormControl, Button } from 'reac
 import { FaArrowDown } from 'react-icons/fa';
 import Select from 'react-select';
 import { SocialIcon } from 'react-social-icons';
-import axios from 'axios';
+import ContactForm from './ContactForm';
 
 // create a component
 class Home extends Component {
@@ -69,102 +69,11 @@ class Home extends Component {
 		// 	});
 	}
 
-	renderSubmitButton() {
-		return (
-			<Button style={{ float: 'right' }} variant="primary" type="submit">
-				Submit
-			</Button>
-		);
-	}
-
-	renderContactMe() {
-		return (
-			<div>
-				<h2>Contact Me</h2>
-				<Jumbotron>
-					<form
-						accept-charset="UTF-8"
-						action="https://usebasin.com/f/845c279d47ef"
-						enctype="multipart/form-data"
-						method="POST"
-						// onSubmit={this.handleSubmit.bind(this)}
-					>
-						{/* Name */}
-						<label>Full Name*</label>
-						<FormControl
-							type="textarea"
-							name="name"
-							placeholder="Jane Doe..."
-							className="mr-sm-2"
-							required
-						/>
-						{/* Message */}
-						<label>Message*</label>
-						<FormControl
-							as="textarea"
-							rows="3"
-							name="message"
-							placeholder="Jane Doe..."
-							className="mr-sm-2"
-							required
-						/>
-						{/* Email */}
-						<label>Email*</label>
-						<FormControl
-							type="textarea"
-							name="email"
-							placeholder="foo@bar.com"
-							className="mr-sm-2"
-							required
-						/>
-						{/* Rating*/}
-						<label>Rate the site?</label>
-						<Select
-							options={[
-								{ label: '1 - Needs improvement', value: 1 },
-								{ label: '2 - No comment', value: 2 },
-								{ label: '3 - Good to go', value: 3 }
-							]}
-							name="rating"
-						/>
-						<br />
-						{/* Social icons and Submit Button */}
-						<Row>
-							<Col xs md={1}>
-								<SocialIcon
-									url="https://www.linkedin.com/in/rupal-totale-098360141/"
-									target="_blank"
-									rel="noopener noreferrer"
-								/>
-							</Col>
-							<Col xs md={1}>
-								<SocialIcon
-									url="https://github.com/rupaltotale"
-									target="_blank"
-									rel="noopener noreferrer"
-								/>
-							</Col>
-							<Col xs md={1}>
-								<SocialIcon
-									url="mailto:rupaltotale@gmail.com"
-									target="_blank"
-									rel="noopener noreferrer"
-								/>
-							</Col>
-							<Col xs md={{ span: 3, offset: 6 }}>
-								{this.renderSubmitButton()}
-							</Col>
-						</Row>
-					</form>
-				</Jumbotron>
-			</div>
-		);
-	}
 	render() {
 		return (
 			<div className="container">
 				{this.renderAboutMe()}
-				{this.renderContactMe()}
+				<ContactForm />
 			</div>
 		);
 	}
