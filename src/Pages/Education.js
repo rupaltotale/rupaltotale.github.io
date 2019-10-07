@@ -4,6 +4,21 @@ import JumboListing from "../Components/JumboListing";
 import { Image } from "react-bootstrap";
 
 export default class Education extends Component {
+  renderRelevantCoursework() {
+    return this.props.education.map((course, index) => {
+      return (
+        <JumboListing
+          key={`course-${index}`}
+          title={course.title}
+          description={course.description}
+          tags={course.tags}
+          sourceCodeUrl={"https://github.com/rupaltotale"}
+          type={"GrayBox"}
+          startTime={course.startTime}
+        />
+      );
+    });
+  }
   render() {
     return (
       <div className="container">
@@ -31,6 +46,7 @@ export default class Education extends Component {
           startTime={"Sept 2018"}
           endTime={"Present"}
         />
+        {this.renderRelevantCoursework()}
       </div>
     );
   }

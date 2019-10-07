@@ -19,15 +19,21 @@ class JumboListing extends Component {
   render() {
     const { description, tags } = this.props;
     return (
-      <Jumbotron className={this.props.type === "ShadowBox" ? "jumbo" : ""}>
+      <Jumbotron
+        className={
+          this.props.type === "ShadowBox" ? "jumbo-shadow" : "jumbo-gray"
+        }
+      >
         <Container>
           <h3>{this.props.title}</h3>
           {this.renderTimePeriod()}
           <hr />
           <Row>
-            <Col xs={12} md={5}>
-              {this.props.gallery}
-            </Col>
+            {this.props.gallery && (
+              <Col xs={12} md={5}>
+                {this.props.gallery}
+              </Col>
+            )}
             <Col xs={12} md={7}>
               <Description description={description}></Description>
             </Col>
@@ -49,9 +55,9 @@ JumboListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  gallery: PropTypes.element.isRequired,
   startTime: PropTypes.string.isRequired,
   // Optional
+  gallery: PropTypes.element,
   endTime: PropTypes.string,
   sourceCodeUrl: PropTypes.string,
   type: PropTypes.oneOf(["GrayBox", "ShadowBox"])

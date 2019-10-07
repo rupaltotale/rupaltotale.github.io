@@ -15,14 +15,19 @@ import API from "./API";
 
 class App extends Component {
   state = {
-    experiences: []
+    experiences: [],
+    education: []
   };
 
   componentDidMount() {
     const api = new API();
-    api.getExperiences(experiences => {
+    api.get("Experiences", experiences => {
       console.log(experiences);
-      this.setState({ experiences: experiences });
+      this.setState({ experiences });
+    });
+    api.get("Education", education => {
+      console.log(education);
+      this.setState({ education });
     });
   }
 
@@ -64,7 +69,9 @@ class App extends Component {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/education" component={Education} />
+          <Route path="/education">
+            <Education education={this.state.education}></Education>
+          </Route>
           <Route path="/experience">
             <Experience experiences={this.state.experiences} />
           </Route>

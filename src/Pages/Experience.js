@@ -36,7 +36,6 @@ class Experience extends Component {
   render() {
     return (
       <div className="container">
-        <h2 style={{ textAlign: "center" }}>My Experiences</h2>
         <br />
         {this.renderExperiences()}
       </div>

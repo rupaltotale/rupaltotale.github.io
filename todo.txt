@@ -27,7 +27,8 @@
 - sortBy recent? Figure this out
 - Clean up code: refactor!!!, remove unneccesary comments, etc.
 - update readme: fill out sections, add references where needed
-- resume, learn more external button
+- learn more external button
+- sort by feature
 
 
 

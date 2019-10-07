@@ -30,7 +30,7 @@ Ensure you have node installed on you local dev machine. Then run the following 
 
 ### Use Google Sheets as CMS with tabletop.js
 
-I know, I know, this is kind of a strange choice, but do bear with me. I chose google sheets for my CMS because it is free (always a bonus), accessible from anywhere, customizable enough for the purposes of this website, and fits well with a static website. Most of my information displayed on this website is stored on one document with mutiple sheets and I fetch this data with tabletop.js.
+I know, I know, this is kind of a strange choice, but do bear with me. I chose google sheets for my CMS because it is free (always a bonus), accessible from anywhere, customizable enough for the purposes of this website, works well with a static website, and enables over the air (OTA) changes. Most of my information displayed on this website is stored on one document with mutiple sheets and I fetch this data with tabletop.js.
 
 Here is how I set it up.
 
@@ -53,7 +53,7 @@ Here is how I set it up.
             }
           });
       ```
-      2. Template code for single sheet (assuming you only published a single sheet!)
+      1. Template code for single sheet (assuming you only published a single sheet!)
       ```
           Tabletop.init({
             key: '<Your sheets key from step 1.3>',
