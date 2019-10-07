@@ -1,16 +1,52 @@
 //import liraries
 import React, { Component } from "react";
-import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Image,
+  Jumbotron,
+  ButtonToolbar
+} from "react-bootstrap";
 import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import ContactForm from "../Components/ContactForm";
 import ProfilePicture from "../Images/picture.png";
+import ExternalButton from "../Components/ExternalButton";
+import { SocialIcon } from "react-social-icons";
 
 // create a component
 class Home extends Component {
   //   constructor(props) {
   //     super(props);
   //   }
+  renderSocialIcons() {
+    const socialMediaUrls = [
+      "https://www.linkedin.com/in/rupal-totale-098360141/",
+      "https://github.com/rupaltotale",
+      "mailto:rupaltotale@gmail.com"
+    ];
+    return (
+      <ButtonToolbar className="justify-content-center">
+        {socialMediaUrls.map((url, index) => {
+          return (
+            <SocialIcon
+              url={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={`social-media-${index}`}
+              style={{ marginRight: 50 }}
+            />
+          );
+        })}
+        <ExternalButton
+          text="Resume"
+          url="https://drive.google.com/file/d/1vMm9cj3EDBEbwMzjvXXTM0f8K09bDTVb/view?usp=sharing"
+          variant="secondary"
+        ></ExternalButton>
+      </ButtonToolbar>
+    );
+  }
   renderAboutMe() {
     return (
       <div>
@@ -38,6 +74,8 @@ class Home extends Component {
                 </p>
               </Col>
             </Row>
+            <hr></hr>
+            {this.renderSocialIcons()}
           </Container>
         </Jumbotron>
       </div>

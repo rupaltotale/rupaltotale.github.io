@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Row, Col, Jumbotron, FormControl, Button } from "react-bootstrap";
+import { Jumbotron, FormControl, Button } from "react-bootstrap";
 import Select from "react-select";
-import { SocialIcon } from "react-social-icons";
 
 class ContactForm extends Component {
   //   constructor(props) {
@@ -13,37 +12,6 @@ class ContactForm extends Component {
       <Button style={{ float: "right" }} variant="primary" type="submit">
         Submit
       </Button>
-    );
-  }
-
-  renderSocialIcons() {
-    return (
-      <Row>
-        <Col xs md={1}>
-          <SocialIcon
-            url="https://www.linkedin.com/in/rupal-totale-098360141/"
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        </Col>
-        <Col xs md={1}>
-          <SocialIcon
-            url="https://github.com/rupaltotale"
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        </Col>
-        <Col xs md={1}>
-          <SocialIcon
-            url="mailto:rupaltotale@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        </Col>
-        <Col xs md={{ span: 3, offset: 6 }}>
-          {this.renderSubmitButton()}
-        </Col>
-      </Row>
     );
   }
 
@@ -73,7 +41,7 @@ class ContactForm extends Component {
           />
           {/* Email */}
           <label>Email*</label>
-          <FormControl type="email" name="email" className="mr-sm-2" required />
+          <input type="email" name="email" className="mr-sm-2" required />
           {/* Rating*/}
           <label>Rate the site?</label>
           <Select
@@ -89,7 +57,7 @@ class ContactForm extends Component {
           />
           <br />
           {/* Social icons and Submit Button */}
-          {this.renderSocialIcons()}
+          {this.renderSubmitButton()}
         </form>
       </Jumbotron>
     );
