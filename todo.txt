@@ -4,17 +4,17 @@
 + Create json file with data and use axios to get and render data
 + Tags for jumbo
 + Fix nav bar highlighting
++ Fix padding between image and description on Jumbo Listing
++ Phone number (not this) and email field on Home
++ Sumbit form functionality
++ create image and components folder. Maybe even pages folder
++ Syling of jumbo gray
++ time period with like a calendar icon for items
++ Clean up code: refactor!!!, remove unneccesary comments, etc.- tooltip for tag saying if they click on it, search will well, search for tag
 
-- Fix padding between image and description on Jumbo Listing
-- Phone number and email field on Home
-- Sumbit form functionality
 - Search functionality
 - Tag search functionality
-- create image and components folder. Maybe even pages folder
-- Syling of jumbo gray
-- Get all the data in app.js
-- time period with like a calendar icon for items
-- tooltip for tag saying if they click on it, search will well, search for tag
+- Get project data in app.js
 - restyle tags
 - Description for each skill
 - multiple searches?
@@ -23,13 +23,12 @@
 - toggle images on and off
 - Loading and imports: https://reacttraining.com/react-router/web/guides/code-splitting. Look into webpack and babel
 - Scroll to top
+- Activity indictor
 - See pictures and blog option (as a button)
 - sortBy recent? Figure this out
-- Clean up code: refactor!!!, remove unneccesary comments, etc.
-- update readme: fill out sections, add references where needed
-- learn more external button
-- sort by feature
-
+- Complete readme: fill out sections, add references where needed
+- External button such as learn more
+- allow user to choose sort option
 
 
 BIG ADDITIONS
