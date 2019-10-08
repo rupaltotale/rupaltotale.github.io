@@ -34,7 +34,7 @@
 - allow user to choose sort option
 - setup GA tracking: https://github.com/igrigorik/ga-beacon
 - show attribute in Google sheets
-- lowercase tags
+- lowercase tags so there are no duplicates
 
 BIG ADDITIONS
 - Blog and youtube videos: 
