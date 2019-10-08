@@ -33,6 +33,8 @@
 - External button such as learn more
 - allow user to choose sort option
 - setup GA tracking: https://github.com/igrigorik/ga-beacon
+- show attribute in Google sheets
+- lowercase tags
 
 BIG ADDITIONS
 - Blog and youtube videos: 
@@ -42,3 +44,4 @@ BIG ADDITIONS
 TIP: A react series!
 -- how to publish a "static" react app with github pages
 -- how to use google sheets as a CMS for react app (not recommended for apps with versatile data)
+- Complex search
