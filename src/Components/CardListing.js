@@ -11,7 +11,7 @@ class CardListing extends Component {
   render() {
     const { description, tags } = this.props;
     return (
-      <Card bg="light" border="dark">
+      <Card bg="light">
         <Card.Img variant="top" src={this.props.galleryUrl} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>

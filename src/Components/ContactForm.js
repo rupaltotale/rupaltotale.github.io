@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Jumbotron, FormControl, Button } from "react-bootstrap";
+import { Jumbotron, FormControl, Button, Row, Col } from "react-bootstrap";
 import Select from "react-select";
+import { ReCAPTCHA } from "react-google-recaptcha";
 
 class ContactForm extends Component {
   //   constructor(props) {
@@ -9,18 +10,26 @@ class ContactForm extends Component {
 
   renderSubmitButton() {
     return (
-      <Button style={{ float: "right" }} variant="primary" type="submit">
-        Submit
-      </Button>
+      <Row>
+        <Col sm md="auto">
+          <Button style={{ float: "right" }} variant="primary" type="submit">
+            Submit
+          </Button>
+        </Col>
+      </Row>
     );
   }
 
   render() {
+    const recaptchaRef = React.createRef();
     return (
       <Jumbotron>
         <form
           action="https://www.form-data.com/_functions/submit/xd8igvkwkekuhax1d5g3ee"
           method="post"
+          onSubmit={() => {
+            recaptchaRef.current.execute();
+          }}
         >
           {/* Name */}
           <label>Full Name*</label>
@@ -41,7 +50,12 @@ class ContactForm extends Component {
           />
           {/* Email */}
           <label>Email*</label>
-          <input type="email" name="email" className="mr-sm-2" required />
+          <FormControl
+            type="textarea"
+            name="email"
+            className="mr-sm-2"
+            required
+          />
           {/* Rating*/}
           <label>Rate the site?</label>
           <Select
@@ -54,6 +68,11 @@ class ContactForm extends Component {
               { label: "3 - Good to go", value: "3 - Good to go" }
             ]}
             name="rating"
+          />
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey="6LceZLwUAAAAAAc9Uob7Qa6dl0U4Ob1DAj3OXaC2"
           />
           <br />
           {/* Social icons and Submit Button */}

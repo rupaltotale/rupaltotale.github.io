@@ -1,5 +1,4 @@
 import Tabletop from "tabletop";
-import _ from "lodash";
 
 export default class API {
   constructor(firstname, lastname) {

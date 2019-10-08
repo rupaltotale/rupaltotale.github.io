@@ -47,6 +47,7 @@ export default class Education extends Component {
           endTime={"Present"}
         />
         {this.renderRelevantCoursework()}
+        <br></br>
       </div>
     );
   }

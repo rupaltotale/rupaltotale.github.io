@@ -12,6 +12,9 @@
 + time period with like a calendar icon for items
 + Clean up code: refactor!!!, remove unneccesary comments, etc.- tooltip for tag saying if they click on it, search will well, search for tag
 
+- Fix styling on Home page: padding, email color
+- Add margin bottom on education
+- Scroll to bottom on form submitted
 - Search functionality
 - Tag search functionality
 - Get project data in app.js
@@ -34,7 +37,9 @@
 - recaptcha
 - fix email styling and maybe even position + scroll to bottom on form submission
 - hide google sheets key with env variables: https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
-
+- setup GA tracking: https://github.com/igrigorik/ga-beacon
+- show attribute in Google sheets
+- lowercase tags
 
 BIG ADDITIONS
 - Blog and youtube videos: 
@@ -44,3 +49,4 @@ BIG ADDITIONS
 TIP: A react series!
 -- how to publish a "static" react app with github pages
 -- how to use google sheets as a CMS for react app (not recommended for apps with versatile data)
+- Complex search
