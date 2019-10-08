@@ -9,9 +9,17 @@ import { SocialIcon } from "react-social-icons";
 
 // create a component
 class Home extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
+  constructor(props) {
+    super(props);
+    this.submitted = false;
+  }
+
+  componentDidUpdate() {
+    if (this.submitted) {
+      this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   renderSocialIcons() {
     const socialMediaUrls = [
       "https://www.linkedin.com/in/rupal-totale-098360141/",
@@ -22,13 +30,8 @@ class Home extends Component {
       <Row className="justify-content-center">
         {socialMediaUrls.map((url, index) => {
           return (
-            <Col xs md={1}>
-              <SocialIcon
-                url={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={`social-media-${index}`}
-              />
+            <Col xs md={2} key={`social-media-${index}`}>
+              <SocialIcon url={url} target="_blank" rel="noopener noreferrer" />
             </Col>
           );
         })}
@@ -42,6 +45,7 @@ class Home extends Component {
       </Row>
     );
   }
+
   renderAboutMe() {
     return (
       <div>
@@ -77,11 +81,8 @@ class Home extends Component {
     );
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
-  }
-
   renderFormSubmitted(name, message, email, rating) {
+    this.submitted = true;
     return (
       <Jumbotron
         style={{
@@ -124,7 +125,6 @@ class Home extends Component {
   render() {
     const queryString = require("query-string");
     const parsed = queryString.parse(this.props.location.search);
-    console.log(parsed);
     return (
       <div className="container">
         {this.renderAboutMe()}
@@ -140,6 +140,12 @@ class Home extends Component {
         ) : (
           <ContactForm />
         )}
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={el => {
+            this.messagesEnd = el;
+          }}
+        ></div>
       </div>
     );
   }

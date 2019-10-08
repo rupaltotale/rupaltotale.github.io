@@ -32,6 +32,11 @@
 - Complete readme: fill out sections, add references where needed
 - External button such as learn more
 - allow user to choose sort option
+- section data (about me, contact, education) should be OTA. 
+  Only issue is how do you make it dynamic. Maybe a parse function?
+- recaptcha
+- fix email styling and maybe even position + scroll to bottom on form submission
+- hide google sheets key with env variables: https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
 - setup GA tracking: https://github.com/igrigorik/ga-beacon
 - show attribute in Google sheets
 - lowercase tags so there are no duplicates
