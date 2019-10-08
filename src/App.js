@@ -12,6 +12,7 @@ import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
 import Projects from "./Pages/Projects";
 import API from "./API";
+import Select from "react-select";
 
 class App extends Component {
   state = {
@@ -34,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
           {/* <NavLink to="/home"> */}
           <Navbar.Brand href="/">Rupal Totale</Navbar.Brand>
           {/* </NavLink> */}
@@ -57,12 +58,27 @@ class App extends Component {
               </NavLink>
             </Nav>
             <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
+              <Select
+                options={[
+                  {
+                    label: "Java",
+                    value: "java"
+                  },
+                  { label: "Python", value: "python" },
+                  { label: "JavaScript", value: "javascript" }
+                ]}
+                name="rating"
+                styles={{
+                  container: (provided, state) => ({
+                    ...provided,
+                    width: 150,
+                    margin: 5
+                  })
+                }}
+                className="mr-sm-3"
+                // isMulti
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="success">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Navbar>

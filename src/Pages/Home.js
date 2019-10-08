@@ -13,8 +13,11 @@ class Home extends Component {
     super(props);
     this.submitted = false;
   }
-  componentDidMount() {
-    if (this.submitted) window.scrollTo(0, document.body.scrollHeight);
+
+  componentDidUpdate() {
+    if (this.submitted) {
+      this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   renderSocialIcons() {
@@ -27,13 +30,8 @@ class Home extends Component {
       <Row className="justify-content-center">
         {socialMediaUrls.map((url, index) => {
           return (
-            <Col xs md={1}>
-              <SocialIcon
-                url={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={`social-media-${index}`}
-              />
+            <Col xs md={2} key={`social-media-${index}`}>
+              <SocialIcon url={url} target="_blank" rel="noopener noreferrer" />
             </Col>
           );
         })}
@@ -84,7 +82,7 @@ class Home extends Component {
   }
 
   renderFormSubmitted(name, message, email, rating) {
-    this.submitted = false;
+    this.submitted = true;
     return (
       <Jumbotron
         style={{
@@ -142,6 +140,12 @@ class Home extends Component {
         ) : (
           <ContactForm />
         )}
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={el => {
+            this.messagesEnd = el;
+          }}
+        ></div>
       </div>
     );
   }
