@@ -27,8 +27,38 @@ export default class API {
       }
     }
     dataObjects.push(item);
-    // return _.sortBy(dataObjects, object => object.startTime);
-    return dataObjects;
+    return this.getSortByDate(dataObjects);
+  }
+
+  getSortByDate(dataObjects) {
+    const comparisonArray = [
+      "Winter",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Spring",
+      "Apr",
+      "May",
+      "Jun",
+      "Summer",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Fall",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+    return dataObjects.sort((obj1, obj2) => {
+      const date1 = obj1.startTime.split(" ");
+      const date2 = obj2.startTime.split(" ");
+      if (date1[1] === date2[1]) {
+        return (
+          comparisonArray.indexOf(date2[0]) - comparisonArray.indexOf(date1[0])
+        );
+      }
+      return date2[1] - date1[1];
+    });
   }
 
   get(sheet, completion) {

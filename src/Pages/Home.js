@@ -9,9 +9,14 @@ import { SocialIcon } from "react-social-icons";
 
 // create a component
 class Home extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
+  constructor(props) {
+    super(props);
+    this.submitted = false;
+  }
+  componentDidMount() {
+    if (this.submitted) window.scrollTo(0, document.body.scrollHeight);
+  }
+
   renderSocialIcons() {
     const socialMediaUrls = [
       "https://www.linkedin.com/in/rupal-totale-098360141/",
@@ -42,6 +47,7 @@ class Home extends Component {
       </Row>
     );
   }
+
   renderAboutMe() {
     return (
       <div>
@@ -77,11 +83,8 @@ class Home extends Component {
     );
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
-  }
-
   renderFormSubmitted(name, message, email, rating) {
+    this.submitted = false;
     return (
       <Jumbotron
         style={{
@@ -124,7 +127,6 @@ class Home extends Component {
   render() {
     const queryString = require("query-string");
     const parsed = queryString.parse(this.props.location.search);
-    console.log(parsed);
     return (
       <div className="container">
         {this.renderAboutMe()}
