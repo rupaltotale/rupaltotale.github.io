@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from "react";
 import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
-import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
+import { FaArrowDown, FaCheckCircle, FaStar } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import ContactForm from "../Components/ContactForm";
 import ProfilePicture from "../Images/picture.png";
@@ -61,9 +61,14 @@ class Home extends Component {
                 <p>
                   {`I am a computer science student at Cal Poly presently. 
                   I have dabbled with web and app development in the past through hackathons, internships, and personal projects.
-                  I would like to further explore these areas in the future by working on interesting and meaningful coding projects.`}
+                  I would like to explore these areas further by working on interesting and meaningful coding projects in the future.`}
                 </p>
-                <p>{`Besides coding, I deeply enjoy teaching, reading, and star gazing.`}</p>
+                <p>
+                  {`Besides coding, I deeply enjoy teaching, reading, and star gazing.`}{" "}
+                  <FaStar color="#D5D5CF"></FaStar>
+                  <FaStar color="#E5E5E2" size={10}></FaStar>
+                  <FaStar color="#F0F0EC" size={5}></FaStar>
+                </p>
                 <p>
                   {`Feel free to explore the projects I have worked on, the
                   classes I have taken, and the places I have worked at over the

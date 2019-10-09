@@ -1,21 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Jumbotron, Container, Row, Col } from "react-bootstrap";
-import { FaCalendarAlt } from "react-icons/fa";
 import Description from "./Description";
 import Tags from "./Tags";
+import TimePeriod from "./TimePeriod";
 
 class JumboListing extends Component {
-  renderTimePeriod() {
-    return (
-      <p>
-        <FaCalendarAlt />
-        <i>{` ${this.props.startTime}`}</i>
-        <i>{this.props.endTime ? ` - ${this.props.endTime}` : ""}</i>
-      </p>
-    );
-  }
-
   render() {
     const { description, tags } = this.props;
     return (
@@ -26,7 +16,10 @@ class JumboListing extends Component {
       >
         <Container>
           <h3>{this.props.title}</h3>
-          {this.renderTimePeriod()}
+          <TimePeriod
+            startTime={this.props.startTime}
+            endTime={this.props.endTime}
+          />
           <hr />
           <Row>
             {this.props.gallery && (

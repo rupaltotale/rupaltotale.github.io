@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 class Tags extends Component {
   renderTags() {
-    return this.props.tags.map((tag, index) => {
+    const sortedTags = this.props.tags.sort(function(tag1, tag2) {
+      return tag1.toLowerCase().localeCompare(tag2.toLowerCase());
+    });
+    return sortedTags.map((tag, index) => {
       return (
         <span key={"tag-" + index}>
           {index ? ", " : ""}

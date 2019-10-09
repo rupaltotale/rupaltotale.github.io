@@ -6,7 +6,7 @@ import {
   NavLink,
   Redirect
 } from "react-router-dom";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import Home from "./Pages/Home";
 import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
@@ -18,7 +18,7 @@ class App extends Component {
   state = {
     experiences: [],
     education: [],
-    projects:[]
+    projects: []
   };
 
   componentDidMount() {
@@ -97,7 +97,7 @@ class App extends Component {
             <Experience experiences={this.state.experiences} />
           </Route>
           <Route path="/projects">
-            <Projects projects={this.state.projects}/>
+            <Projects projects={this.state.projects} />
           </Route>
           <Route path="/home" component={Home} />
 
