@@ -36,7 +36,7 @@ class Experience extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Experiences</h1>
+        <br />
         {this.renderExperiences()}
       </div>
     );
