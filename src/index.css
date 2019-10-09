@@ -1122,9 +1122,18 @@ caption {
     0 2px 10px 0 rgba(46, 47, 48, 0.212);
   color: #404040;
 }
-
+.activityIndicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 40vh;
+  padding-bottom: 50vh;
+}
 .footer {
-  height: "wrap-content";
+  height: 15vh;
+  padding: 10px;
   background-color: #f7f4e4;
   /* border-bottom: 10px solid; */
   border: 0px;

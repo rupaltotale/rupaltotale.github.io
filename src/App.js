@@ -14,29 +14,30 @@ import Projects from "./Pages/Projects";
 import API from "./API";
 import Select from "react-select";
 import { SocialIcon } from "react-social-icons";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 class App extends Component {
   state = {
     experiences: [],
     education: [],
-    projects: []
+    projects: [],
+    loading: true
   };
 
   componentDidMount() {
     const api = new API();
     api.get("Experiences", experiences => {
-      console.log(experiences);
       this.setState({ experiences });
     });
     api.get("Education", education => {
-      console.log(education);
       this.setState({ education });
     });
     api.get("Projects", projects => {
-      console.log(projects);
       this.setState({ projects });
     });
   }
+
   renderNavBar() {
     return (
       <Navbar
@@ -101,20 +102,37 @@ class App extends Component {
     );
   }
 
+  renderActivityIndicator() {
+    const { experiences, projects, education } = this.state;
+    if (!experiences.length && !projects.length && !education.length) {
+      return (
+        <Loader
+          type="TailSpin"
+          color="#111111"
+          height={100}
+          width={100}
+          timeout={3000}
+          className={"activityIndicator"}
+        />
+      );
+    }
+    return null;
+  }
+
   renderContent() {
     /* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */
-
+    const { experiences, projects, education } = this.state;
     return (
       <Switch>
         <Route path="/education">
-          <Education education={this.state.education}></Education>
+          <Education education={education}></Education>
         </Route>
         <Route path="/experience">
-          <Experience experiences={this.state.experiences} />
+          <Experience experiences={experiences} />
         </Route>
         <Route path="/projects">
-          <Projects projects={this.state.projects} />
+          <Projects projects={projects} />
         </Route>
         <Route path="/home" component={Home} />
 
@@ -140,6 +158,7 @@ class App extends Component {
         {socialMediaUrls.map((url, index) => {
           return (
             <SocialIcon
+              key={`social-icon-${index}`}
               url={url}
               target="_blank"
               rel="noopener noreferrer"
@@ -171,6 +190,7 @@ class App extends Component {
       <div className="outer-container">
         <Router>
           {this.renderNavBar()}
+          {this.renderActivityIndicator()}
           {this.renderContent()}
           {this.renderFooter()}
         </Router>
