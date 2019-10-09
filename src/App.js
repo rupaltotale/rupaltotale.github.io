@@ -62,7 +62,7 @@ class App extends Component {
                 <Nav.Link href="/projects">Projects</Nav.Link>
               </NavLink>
             </Nav>
-            <Form inline>
+            {/* <Form inline>
               <Select
                 options={[
                   {
@@ -84,7 +84,7 @@ class App extends Component {
                 // isMulti
               />
               <Button variant="success">Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Navbar>
         {/* A <Switch> looks through its children <Route>s and

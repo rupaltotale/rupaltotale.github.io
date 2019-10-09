@@ -10,7 +10,8 @@ class Tags extends Component {
       return (
         <span key={"tag-" + index}>
           {index ? ", " : ""}
-          <a href="/">{tag}</a>
+          {/* <a href="/">{tag}</a> */}
+          {tag}
         </span>
       );
     });
@@ -19,7 +20,9 @@ class Tags extends Component {
   render() {
     return (
       <p>
-        <span>{"Tags: "}</span>
+        <span>
+          <b>{"Related Technologies: "}</b>
+        </span>
         {this.renderTags()}
       </p>
     );
