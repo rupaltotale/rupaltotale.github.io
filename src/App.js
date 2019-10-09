@@ -17,7 +17,8 @@ import Select from "react-select";
 class App extends Component {
   state = {
     experiences: [],
-    education: []
+    education: [],
+    projects:[]
   };
 
   componentDidMount() {
@@ -29,6 +30,10 @@ class App extends Component {
     api.get("Education", education => {
       console.log(education);
       this.setState({ education });
+    });
+    api.get("Projects", projects => {
+      console.log(projects);
+      this.setState({ projects });
     });
   }
 
@@ -92,7 +97,7 @@ class App extends Component {
             <Experience experiences={this.state.experiences} />
           </Route>
           <Route path="/projects">
-            <Projects />
+            <Projects projects={this.state.projects}/>
           </Route>
           <Route path="/home" component={Home} />
 

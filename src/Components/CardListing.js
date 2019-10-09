@@ -12,7 +12,11 @@ class CardListing extends Component {
     const { description, tags } = this.props;
     return (
       <Card bg="light">
-        <Card.Img variant="top" src={this.props.galleryUrl} />
+        <Card.Img
+          variant="top"
+          src={this.props.galleryUrl}
+          className={"project-image"}
+        />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>
@@ -22,11 +26,13 @@ class CardListing extends Component {
         <Card.Footer>
           {/* <small className="text-muted">Last updated 3 mins ago</small> */}
           <Tags tags={tags}></Tags>
-          <ExternalButton
-            text="Source Code"
-            url="https://github.com/"
-            variant="dark"
-          ></ExternalButton>
+          {this.props.sourceCodeUrl && (
+            <ExternalButton
+              text="Source Code"
+              url={this.props.sourceCodeUrl}
+              variant="dark"
+            ></ExternalButton>
+          )}
         </Card.Footer>
       </Card>
     );

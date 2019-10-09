@@ -19,7 +19,9 @@ export default class API {
           tags: data[i].tags.split(","),
           gallery: data[i].gallery,
           startTime: data[i].startTime,
-          endTime: data[i].endTime !== "" ? data[i].endTime : null
+          endTime: data[i].endTime !== "" ? data[i].endTime : null,
+          projectType: data[i].projectType,
+          url: data[i].url,
         };
       } else if (data[i].description !== "") {
         item.description.push(data[i].description);
