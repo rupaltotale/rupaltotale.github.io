@@ -78,8 +78,6 @@ class Home extends Component {
                 </p>
               </Col>
             </Row>
-            <hr></hr>
-            {this.renderSocialIcons()}
           </Container>
         </Jumbotron>
       </div>

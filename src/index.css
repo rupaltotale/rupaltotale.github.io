@@ -557,16 +557,6 @@ dd {
   padding: 0 1rem;
 }
 
-.container,
-.small-container,
-.medium-container {
-  max-width: 1200px;
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  /* background-color: whitesmoke; */
-}
-
 .small-container {
   max-width: 800px;
 }
@@ -1076,8 +1066,18 @@ caption {
 /**
  * Layout
  */
+
 /* Custom classes */
-/* To be used for About me and experiences */
+.container,
+.small-container,
+.medium-container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-image: linear-gradient(45deg, rgb(143, 0, 0), rgb(250, 224, 66)); */
+  /* background-color: whitesmoke; */
+}
 .jumbo-shadow {
   border: 1px solid #c0c1c2;
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px #8cbcfe; */
@@ -1090,7 +1090,7 @@ caption {
   border: 1px solid #c0c1c2;
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px #8cbcfe; */
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #fff;
+  background-color: #fdfdf8;
 }
 
 .jumbo-gray {
@@ -1109,4 +1109,28 @@ caption {
   box-shadow: 0 2px 5px 0 rgba(61, 60, 61, 0.274),
     0 2px 10px 0 rgba(46, 47, 48, 0.212);
   border-radius: 1%;
+}
+
+.outer-container {
+  background-image: linear-gradient(135deg, #f5f4ed, #f7f4e4);
+}
+
+.navbar {
+  background-color: #e0ded0;
+  box-shadow: 0 2px 5px 0 rgba(61, 60, 61, 0.274),
+    0 2px 10px 0 rgba(46, 47, 48, 0.212);
+  color: #404040;
+}
+
+.footer {
+  height: "wrap-content";
+  background-color: #f7f4e4;
+  /* border-bottom: 10px solid; */
+  border-image: linear-gradient(45deg, rgb(143, 0, 0), rgb(250, 224, 66)) 1;
+  border-top: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }

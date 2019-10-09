@@ -39,6 +39,7 @@ export default class Education extends Component {
               }
               fluid
               rounded
+              style={{ padding: 10 }}
             />
           }
           sourceCodeUrl={"https://github.com/rupaltotale"}
