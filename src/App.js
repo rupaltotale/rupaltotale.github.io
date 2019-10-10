@@ -6,7 +6,7 @@ import {
   NavLink,
   Redirect
 } from "react-router-dom";
-import { Navbar, Nav, Form, Button, Row, Col } from "react-bootstrap";
+import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import Home from "./Pages/Home";
 import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
@@ -111,7 +111,7 @@ class App extends Component {
           color="#111111"
           height={100}
           width={100}
-          timeout={3000}
+          timeout={0}
           className={"activityIndicator"}
         />
       );

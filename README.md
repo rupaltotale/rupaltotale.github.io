@@ -107,3 +107,4 @@ I use the following extensions when working with Javascript:
 - [Temporary email with Ethereal](https://ethereal.email/create)
 - [Get started with react router](https://reacttraining.com/react-router/web/example/basic)
 - [Install react-router-dom with npm](https://www.npmjs.com/package/react-router-dom)
+- [Generate Icons](https://favicon.io/favicon-generator/)

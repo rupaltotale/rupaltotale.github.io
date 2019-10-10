@@ -16,12 +16,22 @@ export default class API {
           id: data[i].id,
           title: data[i].title,
           description: [data[i].description],
-          tags: data[i].tags.split(","),
+          tags: data[i].tags
+            .split(",")
+            .map(tag => {
+              return {
+                key: tag.toLowerCase().trim(),
+                value: this.getTagFormatted(tag)
+              };
+            })
+            .sort(function(tag1, tag2) {
+              return tag1.key.localeCompare(tag2.key);
+            }),
           gallery: data[i].gallery,
           startTime: data[i].startTime,
           endTime: data[i].endTime !== "" ? data[i].endTime : null,
           projectType: data[i].projectType,
-          url: data[i].url,
+          url: data[i].url
         };
       } else if (data[i].description !== "") {
         item.description.push(data[i].description);
@@ -72,5 +82,30 @@ export default class API {
         completion(this.getDataAsObjects(tabletop.sheets(sheet).elements));
       }
     });
+  }
+
+  getTagFormatted(tag: string): String {
+    const special = {
+      npm: "npm",
+      javascript: "JavaScript",
+      react: "React",
+      "react-native": "React-Native",
+      html: "HTML",
+      css: "CSS",
+      mongodb: "MongoDB",
+      mysql: "MySQL",
+      express: "Express",
+      xcode: "XCode",
+      jquery: "jQuery",
+      php: "PHP",
+      "android studio": "Android Studio",
+      json: "JSON",
+      "ruby on rails": "Ruby on Rails",
+      "sql server": "SQL Server",
+      wordpress: "WordPress",
+      "visual basic": "Visual Basic"
+    };
+    const displayTag = special[tag];
+    return displayTag ? displayTag : tag[0].toUpperCase() + tag.slice(1);
   }
 }

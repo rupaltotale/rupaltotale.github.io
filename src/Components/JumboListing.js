@@ -47,7 +47,7 @@ class JumboListing extends Component {
 JumboListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   startTime: PropTypes.string.isRequired,
   // Optional
   gallery: PropTypes.element,
