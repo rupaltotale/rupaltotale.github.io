@@ -8,7 +8,7 @@ class Tags extends Component {
         <span key={"tag-" + index}>
           {index ? ", " : ""}
           {/* <a href="/">{tag}</a> */}
-          {tag.value}
+          {tag.label}
         </span>
       );
     });

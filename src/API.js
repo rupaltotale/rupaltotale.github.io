@@ -1,9 +1,10 @@
 import Tabletop from "tabletop";
+import _ from "lodash";
 
 export default class API {
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+  constructor() {
+    this.allTags = [];
+    this.tagsFiltered = false;
   }
 
   getDataAsObjects(data) {
@@ -19,13 +20,16 @@ export default class API {
           tags: data[i].tags
             .split(",")
             .map(tag => {
-              return {
-                key: tag.toLowerCase().trim(),
-                value: this.getTagFormatted(tag)
+              const value = tag.toLowerCase().trim();
+              const tagObj = {
+                value,
+                label: this.getTagFormatted(value)
               };
+              this.allTags.push(tagObj);
+              return tagObj;
             })
             .sort(function(tag1, tag2) {
-              return tag1.key.localeCompare(tag2.key);
+              return tag1.value.localeCompare(tag2.value);
             }),
           gallery: data[i].gallery,
           startTime: data[i].startTime,
@@ -107,5 +111,13 @@ export default class API {
     };
     const displayTag = special[tag];
     return displayTag ? displayTag : tag[0].toUpperCase() + tag.slice(1);
+  }
+
+  getUniqueTags(shouldReturn: boolean) {
+    if (shouldReturn)
+      return _.uniqBy(this.allTags, "value").sort(function(tag1, tag2) {
+        return tag1.value.localeCompare(tag2.value);
+      });
+    return [];
   }
 }

@@ -52,7 +52,7 @@ class CardListing extends Component {
 CardListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   galleryUrl: PropTypes.string.isRequired,
   startTime: PropTypes.string.isRequired,
   // Optional

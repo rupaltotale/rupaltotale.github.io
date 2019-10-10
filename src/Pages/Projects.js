@@ -11,7 +11,7 @@ export default class Projects extends Component {
     this.props.projects.map((project, index) => {
       children.push(
         <CardListing
-          key={`project-${index}`}
+          key={`project-item-${index}`}
           title={project.title}
           description={project.description}
           tags={project.tags}
@@ -22,12 +22,20 @@ export default class Projects extends Component {
         />
       );
       if (index % 2) {
-        decks.push(<CardDeck style={{ margin: 20 }}>{children}</CardDeck>);
+        decks.push(
+          <CardDeck style={{ margin: 20 }} key={`project-deck-${index}`}>
+            {children}
+          </CardDeck>
+        );
         children = [];
       }
       return null;
     });
-    decks.push(<CardDeck style={{ margin: 20 }}>{children}</CardDeck>);
+    decks.push(
+      <CardDeck style={{ margin: 20 }} key={`project-deck-${-1}`}>
+        {children}
+      </CardDeck>
+    );
     return <div>{decks}</div>;
   }
   render() {

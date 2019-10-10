@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
   NavLink,
-  Redirect
+  Redirect,
+  useHistory
 } from "react-router-dom";
 import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import Home from "./Pages/Home";
@@ -16,8 +17,14 @@ import Select from "react-select";
 import { SocialIcon } from "react-social-icons";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import ScrollToTop from "./Components/ScrollToTop";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.api = new API();
+  }
+
   state = {
     experiences: [],
     education: [],
@@ -26,14 +33,13 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const api = new API();
-    api.get("Experiences", experiences => {
+    this.api.get("Experiences", experiences => {
       this.setState({ experiences });
     });
-    api.get("Education", education => {
+    this.api.get("Education", education => {
       this.setState({ education });
     });
-    api.get("Projects", projects => {
+    this.api.get("Projects", projects => {
       this.setState({ projects });
     });
   }
@@ -68,25 +74,35 @@ class App extends Component {
               <Nav.Link href="/projects">Projects</Nav.Link>
             </NavLink>
           </Nav>
-          {/* {this.renderSearch()} */}
+          {this.renderSearch()}
         </Navbar.Collapse>
       </Navbar>
     );
   }
 
+  searchForTag() {
+    // let history = useHistory();
+    // history.push("./home", []);
+    // return (
+    //   <Redirect
+    //     to={{
+    //       pathname: "/search",
+    //       search: "?utm=your+face",
+    //       state: { tag: "java" }
+    //     }}
+    //   />
+    // );
+  }
+
   renderSearch() {
+    const { experiences, education, projects } = this.state;
     return (
       <Form inline>
         <Select
-          options={[
-            {
-              label: "Java",
-              value: "java"
-            },
-            { label: "Python", value: "python" },
-            { label: "JavaScript", value: "javascript" }
-          ]}
-          name="rating"
+          options={this.api.getUniqueTags(
+            experiences.length && education.length && projects.length
+          )}
+          name="search"
           styles={{
             container: (provided, state) => ({
               ...provided,
@@ -97,7 +113,9 @@ class App extends Component {
           className="mr-sm-3"
           // isMulti
         />
-        <Button variant="success">Search</Button>
+        <Button variant="success" onClick={this.searchForTag}>
+          Search
+        </Button>
       </Form>
     );
   }
@@ -189,10 +207,12 @@ class App extends Component {
     return (
       <div className="outer-container">
         <Router>
-          {this.renderNavBar()}
-          {this.renderActivityIndicator()}
-          {this.renderContent()}
-          {this.renderFooter()}
+          <ScrollToTop>
+            {this.renderNavBar()}
+            {this.renderActivityIndicator()}
+            {this.renderContent()}
+            {this.renderFooter()}
+          </ScrollToTop>
         </Router>
       </div>
     );

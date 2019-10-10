@@ -31,7 +31,6 @@ export default class Education extends Component {
             "Intend to minor in Data Science and Math and get a Masters in Computer Science",
             "Relevant coursework discussed below"
           ]}
-          tags={["Java", "C", "Python"]}
           gallery={
             <Image
               src={

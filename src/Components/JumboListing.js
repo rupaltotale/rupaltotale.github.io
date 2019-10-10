@@ -32,7 +32,7 @@ class JumboListing extends Component {
             </Col>
           </Row>
           <hr />
-          <Tags tags={tags}></Tags>
+          {tags && <Tags tags={tags}></Tags>}
           {/* <ExternalButton
             url="#"
             text="Learn More"
@@ -47,9 +47,9 @@ class JumboListing extends Component {
 JumboListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   startTime: PropTypes.string.isRequired,
   // Optional
+  tags: PropTypes.arrayOf(PropTypes.object),
   gallery: PropTypes.element,
   endTime: PropTypes.string,
   sourceCodeUrl: PropTypes.string,
