@@ -4,8 +4,7 @@ import {
   Switch,
   Route,
   NavLink,
-  Redirect,
-  useHistory
+  Redirect
 } from "react-router-dom";
 import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import Home from "./Pages/Home";
@@ -13,11 +12,12 @@ import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
 import Projects from "./Pages/Projects";
 import API from "./API";
-import Select from "react-select";
 import { SocialIcon } from "react-social-icons";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import ScrollToTop from "./Components/ScrollToTop";
+import SearchResults from "./Pages/SearchResults";
+import SearchBar from "./Components/SearchBar";
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,9 @@ class App extends Component {
     experiences: [],
     education: [],
     projects: [],
-    loading: true
+    loading: true,
+    redirectToSearch: false,
+    selectedTag: null
   };
 
   componentDidMount() {
@@ -45,6 +47,7 @@ class App extends Component {
   }
 
   renderNavBar() {
+    const { experiences, education, projects } = this.state;
     return (
       <Navbar
         bg="dark"
@@ -69,54 +72,17 @@ class App extends Component {
             <NavLink to="/experience">
               <Nav.Link href="/experience">Experience</Nav.Link>
             </NavLink>
-
             <NavLink to="/projects">
               <Nav.Link href="/projects">Projects</Nav.Link>
             </NavLink>
           </Nav>
-          {this.renderSearch()}
+          <SearchBar
+            options={this.api.getUniqueTags(
+              experiences.length && education.length && projects.length
+            )}
+          ></SearchBar>
         </Navbar.Collapse>
       </Navbar>
-    );
-  }
-
-  searchForTag() {
-    // let history = useHistory();
-    // history.push("./home", []);
-    // return (
-    //   <Redirect
-    //     to={{
-    //       pathname: "/search",
-    //       search: "?utm=your+face",
-    //       state: { tag: "java" }
-    //     }}
-    //   />
-    // );
-  }
-
-  renderSearch() {
-    const { experiences, education, projects } = this.state;
-    return (
-      <Form inline>
-        <Select
-          options={this.api.getUniqueTags(
-            experiences.length && education.length && projects.length
-          )}
-          name="search"
-          styles={{
-            container: (provided, state) => ({
-              ...provided,
-              width: 150,
-              margin: 5
-            })
-          }}
-          className="mr-sm-3"
-          // isMulti
-        />
-        <Button variant="success" onClick={this.searchForTag}>
-          Search
-        </Button>
-      </Form>
     );
   }
 
@@ -143,28 +109,40 @@ class App extends Component {
     const { experiences, projects, education } = this.state;
     return (
       <Switch>
-        <Route path="/education">
-          <Education education={education}></Education>
-        </Route>
-        <Route path="/experience">
-          <Experience experiences={experiences} />
-        </Route>
-        <Route path="/projects">
-          <Projects projects={projects} />
-        </Route>
+        <Route
+          path="/experience"
+          render={props => <Experience {...props} experiences={experiences} />}
+        />
+        <Route
+          path="/education"
+          render={props => <Education {...props} education={education} />}
+        />
+        <Route
+          path="/projects"
+          render={props => <Projects {...props} projects={projects} />}
+        />
+        <Route
+          path="/search"
+          render={props => (
+            <SearchResults
+              {...props}
+              experiences={experiences}
+              education={education}
+              projects={projects}
+            />
+          )}
+        ></Route>
         <Route path="/home" component={Home} />
 
         {/* If none of the previous routes render anything,
-      this route acts as a fallback.
-      Important: A route with path="/" will *always* match
-      the URL because all URLs begin with a /. So that's
-      why we put this one last of all */}
+      this route acts as a fallback. */}
         <Route path="/">
           <Redirect to="/home" component={Home} />
         </Route>
       </Switch>
     );
   }
+
   renderSocialIcons() {
     const socialMediaUrls = [
       "https://www.linkedin.com/in/rupal-totale-098360141/",
@@ -196,10 +174,10 @@ class App extends Component {
   }
   renderFooter() {
     return (
-      <div className="footer">
+      <footer className="footer">
         {this.renderSocialIcons()}
         <h6>© Rupal Totale</h6>
-      </div>
+      </footer>
     );
   }
 
