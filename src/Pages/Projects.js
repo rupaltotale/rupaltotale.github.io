@@ -23,7 +23,7 @@ export default class Projects extends Component {
       );
       if (index % 2) {
         decks.push(
-          <CardDeck style={{ margin: 20 }} key={`project-deck-${index}`}>
+          <CardDeck style={{ marginBottom: 30 }} key={`project-deck-${index}`}>
             {children}
           </CardDeck>
         );
