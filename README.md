@@ -77,7 +77,7 @@ I have a contact form on this website and initially I was planning to send the d
 2. Get the form action url (edit section of the form) and put it in your form like this:
 
    ```html
-   <form action="Your form action URL goes here" method="post" ...>
+   <form action="Form action URL" method="post">
      ...
      <button type="submit">
        Submit
@@ -85,7 +85,7 @@ I have a contact form on this website and initially I was planning to send the d
    </form>
    ```
 
-3. And voila, the data entered in the form should be sent to your form-data inbox and your mail (you need to configure this in the Email section of the form) upon hitting submit.
+3. And voila, the data entered in the form should be sent to your form-data inbox and your mail (you need to configure this in the Email section) upon hitting submit.
 
 There are quite a few things you can configure with form-data but I will leave figuring that out that to the reader.
 
@@ -93,7 +93,9 @@ There are quite a few things you can configure with form-data but I will leave f
 
 GH Pages is an awesome feature offered by GitHub to host static webpages for a respository. If you want to host your personal website on a url of this format: `<username>.github.io`, the repo name has to be `<username>.github.io` (this is a user page). Otherwise, the url will be `<username>.github.io/repo-name`. I did the former.
 
-I have discussed the steps breifly on how to deploy a react web app to GH Pages. This is assuming you have already created a react app that resides in a repo by the name of `<username>.github.io`.
+I have discussed the steps briefly on how to deploy a react web app to GH Pages below.
+
+> Note: This is assuming you have already created a react app that resides in a repo by the name of `<username>.github.io`.
 
 1. Your react code should live in a branch other than master as master is where the static website is deployed for user pages. My code lives in a branch called development.
 2. Install gh-pages with npm: `npm install gh-pages`
@@ -104,8 +106,7 @@ I have discussed the steps breifly on how to deploy a react web app to GH Pages.
      "name": "portfolio",
      "homepage": "http://<username>.github.io/",
      "version": "0.1.0",
-     "private": true,
-     ...
+     "private": true
    }
    ```
 
@@ -116,7 +117,7 @@ I have discussed the steps breifly on how to deploy a react web app to GH Pages.
    "deploy": "gh-pages -d build"
    ```
 
-   Looks like this:
+   Should look something like this:
 
    ```json
    "scripts": {
@@ -137,7 +138,7 @@ For more information, see [References](#references).
 
 This is a single page web app with client-side routing accomplished by react-router. By using react-router, the navigation to different pages does not required a refresh and thus allows for a seamless user experience.
 
-To get started with react-router, you should check out there [comprehensive documentation](https://reacttraining.com/react-router/web/guides/quick-start).
+To get started with react-router, you should check out their [comprehensive documentation](https://reacttraining.com/react-router/web/guides/quick-start).
 
 ## Workplace settings
 

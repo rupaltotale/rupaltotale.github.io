@@ -22,21 +22,23 @@
 - Get project data in app.js
 - Activity indictor
 - sortBy recent? Figure this out
-
-### Todo
-
 - Search functionality
 - Tag search functionality
 - restyle tags
+- Scroll to top
+- lowercase tags so there are no duplicates
+
+### Todo
+
+- NavLink should not be active when searching
 - Description for each skill
 - multiple searches?
 - FIX ERRORS regarding nesting of \<a\> and \<p\>
-- Scroll to top
 - hide google sheets key with env variables: https://medium.com/@trekinbami/using+environment+variables+in+react+6b0a99d83cf5
 - setup GA tracking: https://github.com/igrigorik/ga+beacon
 - show column in Google sheets
-- lowercase tags so there are no duplicates
-- Create custome image component (too much duplicate code)
+- Create custom image component (too much duplicate code)
+- Consistent code style such as object destructuring
 
 ### Additional Features todo
 
