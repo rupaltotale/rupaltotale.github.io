@@ -11,7 +11,7 @@ I made this "static" website with the popular web framework React. The web app i
     - [Use Google Sheets as CMS with tabletop.js](#use-google-sheets-as-cms-with-tabletopjs)
     - [Submit forms with form-data](#submit-forms-with-form-data)
     - [Host/deploy a react web app with GH Pages](#hostdeploy-a-react-web-app-with-gh-pages)
-    - [Use react-router for a more snappy web app](#use-react-router-for-a-more-snappy-web-app)
+    - [Create a snappy web app](#create-a-snappy-web-app)
   - [Workplace settings](#workplace-settings)
     - [Editor: VS Code](#editor-vs-code)
   - [References](#references)
@@ -40,50 +40,104 @@ Here is how I set it up.
    3. Save your spreadsheet key. From the URL, your spreadsheet key will be the KEY string in `/spreadsheets/d/KEY/edit#gid=0`
       ![image](https://miro.medium.com/max/2694/1*uTBIqOEH8f5JeQHTYHyBKg.png)
 2. Fetch data with tabletop on react app
+
    1. Install tabletop with npm: `npm install tabletop`
    2. Use tabletop in your app to get relevant data
+
       1. Template code for multiple sheets
+
+      ```js
+      Tabletop.init({
+        key: "<Your sheets key from step 1.3>",
+        simpleSheet: false,
+        callback: (data, tabletop) => {
+          const sheetData = tabletop.sheets("sheetName").elements;
+          // use sheetData as neccesary
+        }
+      });
       ```
-          Tabletop.init({
-            key: '<Your sheets key from step 1.3>',
-            simpleSheet: false,
-            callback: (data, tabletop) => {
-              const sheetData = tabletop.sheets('sheetName').elements;
-              // use sheetData as neccesary
-            }
-          });
-      ```
+
       1. Template code for single sheet (assuming you only published a single sheet!)
-      ```
-          Tabletop.init({
-            key: '<Your sheets key from step 1.3>',
-            simpleSheet: true,
-            callback: (data) => {
-              // use data as neccesary
-            }
-          });
+
+      ```js
+      Tabletop.init({
+        key: "<Your sheets key from step 1.3>",
+        simpleSheet: true,
+        callback: data => {
+          // use data as neccesary
+        }
+      });
       ```
 
 ### Submit forms with form-data
 
-Some kind of intro
+I have a contact form on this website and initially I was planning to send the data entered in there to my mail with nodemailer and express. However, such an implementation is not possible on a static website (at least to my knowledge) and so I used form-data to handle the submission. The steps for this are pretty straightforward.
 
-1. Step 1
-2. Step 2
+1. Sign up for an account on [form-data](https://www.form-data.com/) and create a new form
+2. Get the form action url (edit section of the form) and put it in your form like this:
+
+   ```html
+   <form action="Your form action URL goes here" method="post" ...>
+     ...
+     <button type="submit">
+       Submit
+     </button>
+   </form>
+   ```
+
+3. And voila, the data entered in the form should be sent to your form-data inbox and your mail (you need to configure this in the Email section of the form) upon hitting submit.
+
+There are quite a few things you can configure with form-data but I will leave figuring that out that to the reader.
 
 ### Host/deploy a react web app with GH Pages
 
-Some kind of intro
+GH Pages is an awesome feature offered by GitHub to host static webpages for a respository. If you want to host your personal website on a url of this format: `<username>.github.io`, the repo name has to be `<username>.github.io` (this is a user page). Otherwise, the url will be `<username>.github.io/repo-name`. I did the former.
 
-1. Step 1
-2. Step 2
+I have discussed the steps breifly on how to deploy a react web app to GH Pages. This is assuming you have already created a react app that resides in a repo by the name of `<username>.github.io`.
 
-### Use react-router for a more snappy web app
+1. Your react code should live in a branch other than master as master is where the static website is deployed for user pages. My code lives in a branch called development.
+2. Install gh-pages with npm: `npm install gh-pages`
+3. Specify the homepage attribute in your `package.json` file:
 
-Use hash router for static pages
+   ```json
+   {
+     "name": "portfolio",
+     "homepage": "http://<username>.github.io/",
+     "version": "0.1.0",
+     "private": true,
+     ...
+   }
+   ```
 
-1. Step 1
-2. Step 2
+4. In the scripts object in `package.json`, add these two command specifications:
+
+   ```json
+   "predeploy": "yarn run build",
+   "deploy": "gh-pages -d build"
+   ```
+
+   Looks like this:
+
+   ```json
+   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
+   },
+   ```
+
+5. Then generate a production build of your app, and deploy it to GitHub Pages with `npm run deploy`
+
+For more information, see [References](#references).
+
+### Create a snappy web app
+
+This is a single page web app with client-side routing accomplished by react-router. By using react-router, the navigation to different pages does not required a refresh and thus allows for a seamless user experience.
+
+To get started with react-router, you should check out there [comprehensive documentation](https://reacttraining.com/react-router/web/guides/quick-start).
 
 ## Workplace settings
 
@@ -105,6 +159,8 @@ I use the following extensions when working with Javascript:
 - [Form resources for static websites](https://gridsome.org/docs/guide-forms/)
 - [Submit a form with nodemailer and express](https://www.youtube.com/watch?v=EPnBO8HgyRU)
 - [Temporary email with Ethereal](https://ethereal.email/create)
+- [Deploy a React App to GH Pages](https://github.com/gitname/react-gh-pages)
+- [Deploy a React App to GH Pages - Medium](https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a)
 - [Get started with react router](https://reacttraining.com/react-router/web/example/basic)
 - [Install react-router-dom with npm](https://www.npmjs.com/package/react-router-dom)
 - [Generate Icons](https://favicon.io/favicon-generator/)

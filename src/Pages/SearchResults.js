@@ -18,6 +18,10 @@ class SearchResults extends Component {
     selectedTag: {}
   };
 
+  componentDidUpdate() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
+
   componentWillReceiveProps(newProps) {
     this.parsed = this.queryString.parse(newProps.location.search);
     this.props = { ...newProps };
@@ -54,6 +58,12 @@ class SearchResults extends Component {
   render() {
     return (
       <div className="container">
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={el => {
+            this.searchStart = el;
+          }}
+        ></div>
         <h1
           style={{ textAlign: "center" }}
         >{`Search Results for ${this.parsed.tagLabel}`}</h1>

@@ -1,11 +1,10 @@
 //import liraries
 import React, { Component } from "react";
 import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
-import { FaArrowDown, FaCheckCircle, FaStar } from "react-icons/fa";
+import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import ContactForm from "../Components/ContactForm";
 import ProfilePicture from "../Images/picture.png";
-import { SocialIcon } from "react-social-icons";
 
 // create a component
 class Home extends Component {
@@ -16,34 +15,8 @@ class Home extends Component {
 
   componentDidUpdate() {
     if (this.submitted) {
-      this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+      window.scroll({ top: 2500, left: 0, behavior: "smooth" });
     }
-  }
-
-  renderSocialIcons() {
-    const socialMediaUrls = [
-      "https://www.linkedin.com/in/rupal-totale-098360141/",
-      "https://github.com/rupaltotale",
-      "mailto:rupaltotale@gmail.com"
-    ];
-    return (
-      <Row className="justify-content-center">
-        {socialMediaUrls.map((url, index) => {
-          return (
-            <Col xs md={2} key={`social-media-${index}`}>
-              <SocialIcon url={url} target="_blank" rel="noopener noreferrer" />
-            </Col>
-          );
-        })}
-        {/* <Col xs md={"auto"}>
-          <ExternalButton
-            text="Resume"
-            url="https://drive.google.com/file/d/1vMm9cj3EDBEbwMzjvXXTM0f8K09bDTVb/view?usp=sharing"
-            variant="secondary"
-          ></ExternalButton>
-        </Col> */}
-      </Row>
-    );
   }
 
   renderAboutMe() {
@@ -64,10 +37,7 @@ class Home extends Component {
                   I would like to explore these areas further by working on interesting and meaningful coding projects in the future.`}
                 </p>
                 <p>
-                  {`Besides coding, I deeply enjoy teaching, reading, and star gazing.`}{" "}
-                  <FaStar color="#D5D5CF"></FaStar>
-                  <FaStar color="#E5E5E2" size={10}></FaStar>
-                  <FaStar color="#F0F0EC" size={5}></FaStar>
+                  {`Besides coding, I deeply enjoy teaching, reading, and the simple things in life.`}{" "}
                 </p>
                 <p>
                   {`Feel free to explore the projects I have worked on, the
@@ -143,12 +113,6 @@ class Home extends Component {
         ) : (
           <ContactForm />
         )}
-        <div
-          style={{ float: "left", clear: "both" }}
-          ref={el => {
-            this.messagesEnd = el;
-          }}
-        ></div>
       </div>
     );
   }

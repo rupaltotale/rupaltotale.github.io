@@ -20,6 +20,7 @@ class SearchBar extends Component {
 
   searchForTag() {
     const { selectedTag } = this.state;
+    this.setState({ selectedTag: null });
     if (selectedTag) {
       this.props.history.push(
         `/search?tagValue=${selectedTag.value}&tagLabel=${selectedTag.label}`
@@ -44,6 +45,7 @@ class SearchBar extends Component {
           }}
           className="mr-sm-3"
           onChange={this.handleChange}
+          value={this.state.selectedTag}
           // isMulti
         />
         <Button variant="success" onClick={this.searchForTag.bind(this)}>
