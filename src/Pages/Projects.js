@@ -32,7 +32,7 @@ export default class Projects extends Component {
       return null;
     });
     decks.push(
-      <CardDeck style={{ margin: 20 }} key={`project-deck-${-1}`}>
+      <CardDeck style={{ marginBottom: 30 }} key={`project-deck-${-1}`}>
         {children}
       </CardDeck>
     );
