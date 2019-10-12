@@ -22,7 +22,7 @@ class Home extends Component {
   renderAboutMe() {
     return (
       <div>
-        <h2>About Me</h2>
+        <h2 className={"sectionHeadingForHome"}>About Me</h2>
         <Jumbotron className="jumbo-aboutme">
           <Container>
             <Row>
@@ -102,7 +102,7 @@ class Home extends Component {
       <div className="container">
         {this.renderAboutMe()}
 
-        <h2>Contact Me</h2>
+        <h2 className={"sectionHeadingForHome"}>Contact Me</h2>
         {parsed.submit ? (
           this.renderFormSubmitted(
             parsed["?name"],

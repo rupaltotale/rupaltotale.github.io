@@ -29,17 +29,18 @@
 - lowercase tags so there are no duplicates
 - NavLink should not be active when searching
 - FIX ERRORS regarding nesting of \<a\> and \<p\>
+- setup GA tracking: https://github.com/igrigorik/ga+beacon
 
 ### Todo
 
 - Description for each skill
 - multiple searches?
 - hide google sheets key with env variables: https://medium.com/@trekinbami/using+environment+variables+in+react+6b0a99d83cf5
-- setup GA tracking: https://github.com/igrigorik/ga+beacon
 - show column in Google sheets
 - Create custom image component (too much duplicate code)
 - Consistent code style such as object destructuring
 - Activity Indicator should be seperate and is buggy
+- Style{{}} should be converted to class to make code more readable
 
 ### Additional Features todo
 

@@ -36,7 +36,7 @@ class Experience extends Component {
   render() {
     return (
       <div className="container">
-        <br />
+        <h2 className={"sectionHeading"}>{this.props.heading}</h2>
         {this.renderExperiences()}
       </div>
     );
@@ -44,7 +44,8 @@ class Experience extends Component {
 }
 
 Experience.propTypes = {
-  experiences: PropTypes.array
+  experiences: PropTypes.array.isRequired,
+  heading: PropTypes.string.isRequired
 };
 
 export default Experience;

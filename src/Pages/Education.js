@@ -22,7 +22,7 @@ export default class Education extends Component {
   render() {
     return (
       <div className="container">
-        <br />
+        <h2 className={"sectionHeading"}>{this.props.heading}</h2>
         {this.props.showInfo && (
           <JumboListing
             title={"Second Year Computer Science Major at Cal Poly, SLO"}
@@ -49,7 +49,6 @@ export default class Education extends Component {
           />
         )}
         {this.renderRelevantCoursework()}
-        <br></br>
       </div>
     );
   }
@@ -57,7 +56,8 @@ export default class Education extends Component {
 
 Education.propTypes = {
   education: PropTypes.array.isRequired,
-  showInfo: PropTypes.bool
+  showInfo: PropTypes.bool,
+  heading: PropTypes.string
 };
 
 Education.defaultProps = {

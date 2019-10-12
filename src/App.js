@@ -129,7 +129,13 @@ class App extends Component {
       <Switch>
         <Route
           path="/experience"
-          render={props => <Experience {...props} experiences={experiences} />}
+          render={props => (
+            <Experience
+              {...props}
+              experiences={experiences}
+              heading={"Relevant Work Experiences"}
+            />
+          )}
         />
         <Route
           path="/education"
@@ -137,7 +143,13 @@ class App extends Component {
         />
         <Route
           path="/projects"
-          render={props => <Projects {...props} projects={projects} />}
+          render={props => (
+            <Projects
+              {...props}
+              projects={projects}
+              heading={"Selected Projects"}
+            />
+          )}
         />
         <Route
           path="/search"

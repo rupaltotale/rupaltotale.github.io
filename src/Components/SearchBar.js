@@ -39,7 +39,7 @@ class SearchBar extends Component {
           styles={{
             container: (provided, state) => ({
               ...provided,
-              width: 300,
+              width: 200,
               margin: 5
             })
           }}

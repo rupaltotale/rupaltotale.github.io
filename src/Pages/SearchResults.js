@@ -70,20 +70,27 @@ class SearchResults extends Component {
         <hr></hr>
         {this.state.experiences.length > 0 && (
           <div>
-            <h2> {`Experiences related to ${this.parsed.tagLabel}`} </h2>
-            <Experience experiences={this.state.experiences} />
+            <Experience
+              experiences={this.state.experiences}
+              heading={`Experiences related to ${this.parsed.tagLabel}`}
+            />
           </div>
         )}
         {this.state.education.length > 0 && (
           <div>
-            <h2> {`Course work related to ${this.parsed.tagLabel}`} </h2>
-            <Education education={this.state.education} showInfo={false} />
+            <Education
+              education={this.state.education}
+              showInfo={false}
+              heading={`Course work related to ${this.parsed.tagLabel}`}
+            />
           </div>
         )}
         {this.state.projects.length > 0 && (
           <div>
-            <h2> {`Projects related to ${this.parsed.tagLabel}`} </h2>
-            <Projects projects={this.state.projects} />
+            <Projects
+              projects={this.state.projects}
+              heading={`Projects related to ${this.parsed.tagLabel}`}
+            />
           </div>
         )}
       </div>

@@ -1192,3 +1192,11 @@ a.navlink-active {
   );
   border: 0px;
 }
+
+.sectionHeading {
+  font-weight: 200;
+}
+
+.sectionHeadingForHome {
+  font-weight: 400;
+}
