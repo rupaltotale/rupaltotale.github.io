@@ -6,7 +6,7 @@ import {
   NavLink,
   Redirect
 } from "react-router-dom";
-import { Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Home from "./Pages/Home";
 import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
@@ -68,7 +68,6 @@ class App extends Component {
             <NavLink to="/education">
               <Nav.Link href="/education">Education</Nav.Link>
             </NavLink>
-
             <NavLink to="/experience">
               <Nav.Link href="/experience">Experience</Nav.Link>
             </NavLink>

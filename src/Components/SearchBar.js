@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
 class SearchBar extends Component {
-  static propTypes = {};
+  static propTypes = {
+    options: PropTypes.array
+  };
 
   state = {
     selectedTag: null,
@@ -13,9 +15,7 @@ class SearchBar extends Component {
   };
 
   handleChange = selectedTag => {
-    this.setState({ selectedTag }, () =>
-      console.log(`Option selected:`, this.state.selectedTag)
-    );
+    this.setState({ selectedTag });
   };
 
   searchForTag() {

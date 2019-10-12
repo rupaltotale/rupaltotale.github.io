@@ -12,7 +12,7 @@ class ContactForm extends Component {
     return (
       <Row>
         <Col sm md="auto">
-          <Button style={{ float: "right" }} variant="primary" type="submit">
+          <Button style={{ float: "right" }} variant="success" type="submit">
             Submit
           </Button>
         </Col>

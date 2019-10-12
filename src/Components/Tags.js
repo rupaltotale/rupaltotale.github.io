@@ -1,14 +1,27 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 class Tags extends Component {
+  searchForTag(selectedTag) {
+    console.table(selectedTag);
+    console.log(selectedTag[0].value);
+    this.props.history.push(
+      `/search?tagValue=${selectedTag[0].value}&tagLabel=${selectedTag[0].label}`
+    );
+  }
   renderTags() {
     return this.props.tags.map((tag, index) => {
       return (
         <span key={"tag-" + index}>
-          {index ? ", " : ""}
-          {/* <a href="/">{tag}</a> */}
-          {tag.label}
+          {index ? " " : ""}
+          <button
+            className={"tag-button"}
+            onClick={this.searchForTag.bind(this, [tag])}
+          >
+            {tag.label}
+          </button>
+          {/* {tag.label} */}
         </span>
       );
     });
@@ -28,4 +41,4 @@ Tags.propTypes = {
   tags: PropTypes.arrayOf(String)
 };
 
-export default Tags;
+export default withRouter(Tags);

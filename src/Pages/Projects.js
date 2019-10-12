@@ -41,7 +41,6 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="container">
-        <br />
         {this.renderProjects()}
         <br></br>
       </div>
