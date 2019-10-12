@@ -14,7 +14,6 @@ class Tags extends Component {
     return this.props.tags.map((tag, index) => {
       return (
         <span key={"tag-" + index}>
-          {index ? " " : ""}
           <button
             className={"tag-button"}
             onClick={this.searchForTag.bind(this, [tag])}
