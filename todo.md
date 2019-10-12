@@ -27,18 +27,19 @@
 - restyle tags
 - Scroll to top
 - lowercase tags so there are no duplicates
+- NavLink should not be active when searching
+- FIX ERRORS regarding nesting of \<a\> and \<p\>
 
 ### Todo
 
-- NavLink should not be active when searching
 - Description for each skill
 - multiple searches?
-- FIX ERRORS regarding nesting of \<a\> and \<p\>
 - hide google sheets key with env variables: https://medium.com/@trekinbami/using+environment+variables+in+react+6b0a99d83cf5
 - setup GA tracking: https://github.com/igrigorik/ga+beacon
 - show column in Google sheets
 - Create custom image component (too much duplicate code)
 - Consistent code style such as object destructuring
+- Activity Indicator should be seperate and is buggy
 
 ### Additional Features todo
 

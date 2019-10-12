@@ -468,7 +468,7 @@ h5 {
   }
 }
 
-a {
+/* a {
   color: #0366ee;
   text-decoration: none;
 }
@@ -477,7 +477,7 @@ a:active,
 a:focus {
   color: #0246a2;
   text-decoration: underline;
-}
+} */
 
 mark {
   background: #ffeea8;
@@ -1122,6 +1122,32 @@ caption {
     0 2px 10px 0 rgba(46, 47, 48, 0.212);
   color: #404040;
 }
+a.navlink {
+  color: rgb(219, 216, 216);
+  opacity: 0.7;
+  padding: 10px;
+  align-self: center;
+}
+a.navlink:hover {
+  opacity: 1;
+  padding: 10px;
+  align-self: center;
+}
+a.navlink:active {
+  opacity: 1;
+  color: white;
+  text-decoration: underline;
+  padding: 10px;
+  align-self: center;
+}
+
+a.navlink-active {
+  opacity: 1;
+  color: white;
+  padding: 10px;
+  align-self: center;
+}
+
 .activityIndicator {
   display: flex;
   flex-direction: column;
@@ -1129,7 +1155,7 @@ caption {
   align-content: center;
   align-items: center;
   padding-top: 40vh;
-  padding-bottom: 50vh;
+  padding-bottom: 60vh;
 }
 .footer {
   height: 15vh;

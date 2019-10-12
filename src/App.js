@@ -62,17 +62,33 @@ class App extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink to="/home">
-              <Nav.Link href="/home">Home</Nav.Link>
+            <NavLink
+              to="/home"
+              className={"navlink"}
+              activeClassName={"navlink-active"}
+            >
+              Home
             </NavLink>
-            <NavLink to="/education">
-              <Nav.Link href="/education">Education</Nav.Link>
+            <NavLink
+              to="/education"
+              className={"navlink"}
+              activeClassName={"navlink-active"}
+            >
+              Education
             </NavLink>
-            <NavLink to="/experience">
-              <Nav.Link href="/experience">Experience</Nav.Link>
+            <NavLink
+              to="/experience"
+              className={"navlink"}
+              activeClassName={"navlink-active"}
+            >
+              Experience
             </NavLink>
-            <NavLink to="/projects">
-              <Nav.Link href="/projects">Projects</Nav.Link>
+            <NavLink
+              to="/projects"
+              className={"navlink"}
+              activeClassName={"navlink-active"}
+            >
+              Projects
             </NavLink>
           </Nav>
           <SearchBar
