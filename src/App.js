@@ -57,7 +57,10 @@ class App extends Component {
         // className="navbar"
       >
         {/* <NavLink to="/home"> */}
-        <Navbar.Brand href="/">Rupal Totale</Navbar.Brand>
+
+        <NavLink to="/home">
+          <Navbar.Brand>Rupal Totale</Navbar.Brand>
+        </NavLink>
         {/* </NavLink> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

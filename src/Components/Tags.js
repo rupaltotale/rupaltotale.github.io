@@ -4,8 +4,6 @@ import { withRouter } from "react-router-dom";
 
 class Tags extends Component {
   searchForTag(selectedTag) {
-    console.table(selectedTag);
-    console.log(selectedTag[0].value);
     this.props.history.push(
       `/search?tagValue=${selectedTag[0].value}&tagLabel=${selectedTag[0].label}`
     );
