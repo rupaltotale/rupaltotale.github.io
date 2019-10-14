@@ -43,7 +43,6 @@ export default class Projects extends Component {
       <div className="container">
         <h2 className={"sectionHeading"}>{this.props.heading}</h2>
         {this.renderProjects()}
-        <br></br>
       </div>
     );
   }

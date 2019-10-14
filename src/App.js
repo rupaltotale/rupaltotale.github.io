@@ -220,6 +220,7 @@ class App extends Component {
               {this.renderNavBar()}
               {this.renderActivityIndicator()}
               {this.renderContent()}
+              <br></br>
             </ScrollToTop>
           </Router>
         </div>
