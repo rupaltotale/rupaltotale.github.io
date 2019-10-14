@@ -204,7 +204,7 @@ class App extends Component {
   }
   renderFooter() {
     return (
-      <footer className="footer">
+      <footer>
         {this.renderSocialIcons()}
         <h6>© Rupal Totale</h6>
       </footer>
@@ -222,8 +222,8 @@ class App extends Component {
               {this.renderContent()}
             </ScrollToTop>
           </Router>
-          {this.renderFooter()}
         </div>
+        {this.renderFooter()}
       </div>
     );
   }

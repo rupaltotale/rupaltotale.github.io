@@ -1073,6 +1073,7 @@ caption {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   /* background-color: #fef9e7; */
   background-color: #fdfdf8;
+  margin-bottom: 30;
 }
 
 .jumbo-aboutme {
@@ -1081,6 +1082,7 @@ caption {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.25);
   /* background-color: #fef9e7; */
   background-color: #fdfdf8;
+  margin-bottom: 30;
 }
 
 .jumbo-gray {
@@ -1102,12 +1104,10 @@ caption {
 
 .wrapper {
   background-image: linear-gradient(135deg, #fdfdf8, #f7f4e4);
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
+  min-height: 85vh;
 }
 
-.footer {
+footer {
   height: 15vh;
   padding: 10px;
   background-color: #f7f4e4;
