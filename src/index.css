@@ -1,30 +1,19 @@
-/*! 
- * Primitive UI | MIT License
- *
- * A minimalist front-end design toolkit built with Sass for developing 
- * responsive, browser-consistent web apps.
- *
- * Author: Tania Rascia <tania@taniarascia.com>
- * Source: https://github.com/taniarascia/primitive
- * Documentation: https://taniarascia.github.io/primitive
- */
-/**
- * Variables
- *
- * The majority of the configuration for the toolkit.
- */
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+}
+
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Sections
@@ -1098,10 +1087,9 @@ caption {
   border-radius: 0%;
   /* border-bottom: 1px dashed #616262; */
   border-top: 1px solid #616262;
-  padding: 0;
-  padding-bottom: 10px;
+  padding: 10px;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .project-image {
@@ -1112,8 +1100,26 @@ caption {
   border-radius: 1%;
 }
 
-.outer-container {
+.wrapper {
   background-image: linear-gradient(135deg, #fdfdf8, #f7f4e4);
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+.footer {
+  height: 15vh;
+  padding: 10px;
+  background-color: #f7f4e4;
+  /* border-bottom: 10px solid; */
+  border: 0px;
+  border-top: 1px solid;
+  border-image: linear-gradient(45deg, rgb(143, 0, 0), rgb(250, 224, 66)) 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .navbar {
@@ -1155,20 +1161,7 @@ a.navlink-active {
   padding-top: 40vh;
   padding-bottom: 60vh;
 }
-.footer {
-  height: 15vh;
-  padding: 10px;
-  background-color: #f7f4e4;
-  /* border-bottom: 10px solid; */
-  border: 0px;
-  border-top: 1px solid;
-  border-image: linear-gradient(45deg, rgb(143, 0, 0), rgb(250, 224, 66)) 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
+
 .tag-button {
   border-radius: 2px;
   background-image: linear-gradient(
@@ -1194,7 +1187,7 @@ a.navlink-active {
 }
 
 .sectionHeading {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sectionHeadingForHome {

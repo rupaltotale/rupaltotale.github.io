@@ -213,15 +213,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="outer-container">
-        <Router>
-          <ScrollToTop>
-            {this.renderNavBar()}
-            {this.renderActivityIndicator()}
-            {this.renderContent()}
-            {this.renderFooter()}
-          </ScrollToTop>
-        </Router>
+      <div>
+        <div className="wrapper">
+          <Router>
+            <ScrollToTop>
+              {this.renderNavBar()}
+              {this.renderActivityIndicator()}
+              {this.renderContent()}
+            </ScrollToTop>
+          </Router>
+          {this.renderFooter()}
+        </div>
       </div>
     );
   }

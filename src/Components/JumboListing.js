@@ -27,7 +27,7 @@ class JumboListing extends Component {
                 {this.props.gallery}
               </Col>
             )}
-            <Col xs={12} md={7}>
+            <Col xs={12} md={this.props.gallery ? 7 : 12}>
               <Description description={description}></Description>
             </Col>
           </Row>

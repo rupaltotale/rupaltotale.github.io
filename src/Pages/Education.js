@@ -49,6 +49,7 @@ export default class Education extends Component {
           />
         )}
         {this.renderRelevantCoursework()}
+        <br></br>
       </div>
     );
   }
