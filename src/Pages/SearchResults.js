@@ -58,12 +58,6 @@ class SearchResults extends Component {
   render() {
     return (
       <div className="container">
-        <div
-          style={{ float: "left", clear: "both" }}
-          ref={el => {
-            this.searchStart = el;
-          }}
-        ></div>
         <h1
           style={{ textAlign: "center" }}
         >{`Search Results for ${this.parsed.tagLabel}`}</h1>

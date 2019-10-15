@@ -19,7 +19,7 @@ class Experience extends Component {
           gallery={
             // `./${experience.gallery}.png`
             <Image
-              style={{ padding: 10 }}
+              style={{ margin: 10 }}
               src={experience.gallery}
               fluid
               rounded

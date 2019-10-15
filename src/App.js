@@ -105,20 +105,16 @@ class App extends Component {
   }
 
   renderActivityIndicator() {
-    const { experiences, projects, education } = this.state;
-    if (!experiences.length && !projects.length && !education.length) {
-      return (
-        <Loader
-          type="TailSpin"
-          color="#111111"
-          height={100}
-          width={100}
-          timeout={0}
-          className={"activityIndicator"}
-        />
-      );
-    }
-    return null;
+    return (
+      <Loader
+        type="TailSpin"
+        color="#111111"
+        height={100}
+        width={100}
+        timeout={0}
+        className={"activityIndicator"}
+      />
+    );
   }
 
   renderContent() {
@@ -212,14 +208,18 @@ class App extends Component {
   }
 
   render() {
+    const { experiences, projects, education } = this.state;
+    const isLoadingData =
+      !experiences.length && !projects.length && !education.length;
     return (
       <div>
         <div className="wrapper">
           <Router>
             <ScrollToTop>
               {this.renderNavBar()}
-              {this.renderActivityIndicator()}
-              {this.renderContent()}
+              {isLoadingData
+                ? this.renderActivityIndicator()
+                : this.renderContent()}
               <br></br>
             </ScrollToTop>
           </Router>
