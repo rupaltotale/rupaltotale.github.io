@@ -1161,27 +1161,33 @@ a.navlink-active {
 }
 
 .tag-button {
-  border-radius: 2px;
+  border-radius: 0.5em;
   background-image: linear-gradient(
     15deg,
-    rgba(255, 0, 0, 0.274),
-    rgba(255, 255, 0, 0.329)
+    rgba(255, 0, 0, 0.4),
+    rgba(255, 255, 0, 0.4)
   );
   border: 0px;
   color: rgb(49, 47, 47);
   padding: 5px;
   margin: 5px;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  border: 0.1em solid rgba(85, 84, 84, 0.7);
 }
 
-.tag-button:hover,
+.tag-button:hover {
+  /* background-image: linear-gradient(
+    15deg,
+    rgba(255, 0, 0, 0.45),
+    rgba(255, 255, 0, 0.45)
+  ); */
+  opacity: 1;
+}
+
 .tag-button:focus,
 .tag-button:active {
-  background-image: linear-gradient(
-    15deg,
-    rgba(255, 0, 0, 0.432),
-    rgba(255, 255, 0, 0.5)
-  );
-  border: 0px;
+  outline: none;
 }
 
 .sectionHeading {
