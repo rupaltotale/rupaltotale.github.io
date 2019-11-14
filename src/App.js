@@ -135,7 +135,13 @@ class App extends Component {
         />
         <Route
           path="/education"
-          render={props => <Education {...props} education={education} />}
+          render={props => (
+            <Education
+              {...props}
+              education={education}
+              heading={"Formal Computer Science Education"}
+            />
+          )}
         />
         <Route
           path="/projects"

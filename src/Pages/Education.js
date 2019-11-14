@@ -22,7 +22,7 @@ export default class Education extends Component {
   render() {
     return (
       <div className="container">
-        <h2 className={"sectionHeading"}>{this.props.heading}</h2>
+        <h2>{this.props.heading}</h2>
         {this.props.showInfo && (
           <JumboListing
             title={"Second Year Computer Science Major at Cal Poly, SLO"}

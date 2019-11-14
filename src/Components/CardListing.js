@@ -24,7 +24,9 @@ class CardListing extends Component {
           />
         </a>
         <Card.Body>
-          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Title>
+            <h4>{this.props.title}</h4>
+          </Card.Title>
           <Card.Text>
             <TimePeriod
               startTime={this.props.startTime}

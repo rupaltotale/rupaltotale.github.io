@@ -22,7 +22,7 @@ class Home extends Component {
   renderAboutMe() {
     return (
       <div>
-        <h2 className={"sectionHeadingForHome"}>About Me</h2>
+        <h2>About Me</h2>
         <Jumbotron className="jumbo-aboutme">
           <Container>
             <Row>
@@ -30,7 +30,7 @@ class Home extends Component {
                 <Image src={ProfilePicture} roundedCircle fluid />
               </Col>
               <Col xs={12} md={9}>
-                <h5>Hi, I am Rupal.</h5>
+                <h3 style={{ color: "wheat" }}>Hi, I am Rupal.</h3>
                 <p>
                   {`I am a computer science student at Cal Poly presently. 
                   I have dabbled with web and app development in the past through hackathons, internships, and personal projects.
