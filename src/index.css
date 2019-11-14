@@ -77,19 +77,6 @@ a {
 }
 
 /**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
-}
-
-/**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 b,
@@ -1056,7 +1043,8 @@ caption {
  * Layout
  */
 
-/* Custom classes */
+/**************************************** Custom classes *****************************************/
+
 .container,
 .small-container,
 .medium-container {
@@ -1148,6 +1136,7 @@ footer {
     0 2px 10px 0 rgba(46, 47, 48, 0.212);
   color: #404040;
 }
+
 a.navlink {
   color: rgb(219, 216, 216);
   opacity: 0.7;
