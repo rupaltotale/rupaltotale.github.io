@@ -52,16 +52,19 @@ class App extends Component {
     const { experiences, education, projects } = this.state;
     return (
       <Navbar
-        bg="dark"
-        variant="dark"
         expand="lg"
         sticky="top"
+        // bg="light"
         // className="navbar"
       >
         {/* <NavLink to="/home"> */}
 
-        <NavLink to="/home">
-          <Navbar.Brand>Rupal Totale</Navbar.Brand>
+        <NavLink 
+          to="/home"
+          className={"titleNavLink"}
+          activeClassName={"titleNavLink"}
+        >
+          Rupal Totale
         </NavLink>
         {/* </NavLink> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

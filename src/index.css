@@ -1122,7 +1122,7 @@ footer {
   /* border-bottom: 10px solid; */
   border: 0px;
   border-top: 1px solid;
-  border-image: linear-gradient(45deg, rgb(143, 0, 0), rgb(250, 224, 66)) 1;
+  border-image: linear-gradient(135deg, rgb(143, 0, 0), rgb(250, 192, 66)) 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1131,33 +1131,47 @@ footer {
 }
 
 .navbar {
-  background-color: #e0ded0;
+  background-color: #fdfdf8;
   box-shadow: 0 2px 5px 0 rgba(61, 60, 61, 0.274),
     0 2px 10px 0 rgba(46, 47, 48, 0.212);
   color: #404040;
 }
 
+.titleNavLink, .titleNavLink:hover, .titleNavLink:active {
+  background: linear-gradient(135deg, rgb(250, 192, 66), rgb(143, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 2em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-right: 10px;
+}
+
 a.navlink {
-  color: rgb(219, 216, 216);
+  color: rgba(85, 84, 84);
   opacity: 0.7;
   padding: 10px;
   /* align-self: center; */
   text-align: left;
 }
+
 a.navlink:hover {
   opacity: 1;
-  padding: 10px;
+  /* padding: 10px; */
 }
+
 a.navlink:active {
   opacity: 1;
-  color: white;
+  color: rgba(0, 0, 0);
   text-decoration: underline;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 a.navlink-active {
   opacity: 1;
-  color: white;
+  color: rgba(0, 0, 0);
   padding: 10px;
 }
 
