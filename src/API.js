@@ -1,5 +1,5 @@
-import Tabletop from "tabletop";
 import _ from "lodash";
+import Tabletop from "tabletop";
 
 export default class API {
   constructor() {
@@ -48,6 +48,7 @@ export default class API {
 
   getSortByDate(dataObjects) {
     const comparisonArray = [
+      "Present",
       "Winter",
       "Jan",
       "Feb",
@@ -79,7 +80,7 @@ export default class API {
 
   get(sheet, completion) {
     Tabletop.init({
-      key: "19btLS6x866LNmlm-Gud_3w_j-gAJzNFQ-tN6Uoe5iPw",
+      key: process.env.REACT_APP_TOKEN,
       simpleSheet: false,
       callback: (data, tabletop) => {
         // const experiencesData = tabletop.sheets(sheet).elements;

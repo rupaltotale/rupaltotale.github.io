@@ -1,28 +1,30 @@
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import React, { Component } from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import Loader from "react-loader-spinner";
 import {
-  HashRouter as Router,
-  Switch,
-  Route,
   NavLink,
-  Redirect
+  Redirect,
+  Route,
+  HashRouter as Router,
+  Switch
 } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
-import Home from "./Pages/Home";
+import { SocialIcon } from "react-social-icons";
+
+import API from "./API";
+import ScrollToTop from "./Components/ScrollToTop";
+import SearchBar from "./Components/SearchBar";
 import Education from "./Pages/Education";
 import Experience from "./Pages/Experience";
+import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
-import API from "./API";
-import { SocialIcon } from "react-social-icons";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
-import ScrollToTop from "./Components/ScrollToTop";
 import SearchResults from "./Pages/SearchResults";
-import SearchBar from "./Components/SearchBar";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.api = new API();
+    this.api = new API();  
   }
 
   state = {
