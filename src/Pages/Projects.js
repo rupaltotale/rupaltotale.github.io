@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+
 import { CardDeck } from "react-bootstrap";
 import CardListing from "../Components/CardListing";
+import Heading from "../Components/Heading";
 import ProjectPicture from "../Images/project.png";
+import PropTypes from "prop-types";
 
 export default class Projects extends Component {
   renderProjects() {
@@ -41,7 +43,7 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.props.heading}</h2>
+        <Heading heading={this.props.heading} type="h2"></Heading>
         {this.renderProjects()}
       </div>
     );

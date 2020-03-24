@@ -1,9 +1,11 @@
+import { Col, Container, Image, Jumbotron, Row } from "react-bootstrap";
+import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
 //import liraries
 import React, { Component } from "react";
-import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
-import { FaArrowDown, FaCheckCircle } from "react-icons/fa";
-import { IconContext } from "react-icons";
+
 import ContactForm from "../Components/ContactForm";
+import Heading from "../Components/Heading";
+import { IconContext } from "react-icons";
 import ProfilePicture from "../Images/picture.png";
 
 // create a component
@@ -22,7 +24,7 @@ class Home extends Component {
   renderAboutMe() {
     return (
       <div>
-        <h2>About Me</h2>
+        <Heading heading={"About Me"} type="h1" hr={true}></Heading>
         <Jumbotron className="jumbo-aboutme">
           <Container>
             <Row>
@@ -102,7 +104,8 @@ class Home extends Component {
       <div className="container">
         {this.renderAboutMe()}
 
-        <h2 className={"sectionHeadingForHome"}>Contact Me</h2>
+        <Heading heading={"Contact Me"} type="h2" hr={true}></Heading>
+
         {parsed.submit ? (
           this.renderFormSubmitted(
             parsed["?name"],

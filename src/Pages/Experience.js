@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+
+import Heading from "../Components/Heading";
 import { Image } from "react-bootstrap";
-import PropTypes from "prop-types";
 import JumboListing from "../Components/JumboListing";
+import PropTypes from "prop-types";
 
 class Experience extends Component {
   // constructor(props) {
@@ -36,7 +38,7 @@ class Experience extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.props.heading}</h2>
+        <Heading heading={this.props.heading} type="h2"></Heading>
         {this.renderExperiences()}
       </div>
     );

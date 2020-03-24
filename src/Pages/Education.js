@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import JumboListing from "../Components/JumboListing";
+
+import Heading from "../Components/Heading";
 import { Image } from "react-bootstrap";
+import JumboListing from "../Components/JumboListing";
+import PropTypes from "prop-types";
 
 export default class Education extends Component {
   renderRelevantCoursework() {
@@ -22,7 +24,7 @@ export default class Education extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.props.heading}</h2>
+        <Heading heading={this.props.heading} type="h2"></Heading>
         {this.props.showInfo && (
           <JumboListing
             title={"Second Year Computer Science Major at Cal Poly, SLO"}

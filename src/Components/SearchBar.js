@@ -1,8 +1,9 @@
+import { Button, Form } from "react-bootstrap";
 import React, { Component } from "react";
+
 import PropTypes from "prop-types";
 import Select from "react-select";
 import { withRouter } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
 
 class SearchBar extends Component {
   static propTypes = {

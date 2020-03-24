@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+
+import Education from "./Education";
+import Experience from "./Experience";
+import Heading from "../Components/Heading";
+import Projects from "./Projects";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import Experience from "./Experience";
-import Education from "./Education";
-import Projects from "./Projects";
 
 class SearchResults extends Component {
   constructor(props) {
@@ -58,24 +60,24 @@ class SearchResults extends Component {
   render() {
     return (
       <div className="container">
-        <h1
-          style={{ textAlign: "center" }}
-        >{`Search Results for ${this.parsed.tagLabel}`}</h1>
-        <hr></hr>
-        {this.state.experiences.length > 0 && (
-          <div>
-            <Experience
-              experiences={this.state.experiences}
-              heading={`Experiences related to ${this.parsed.tagLabel}`}
-            />
-          </div>
-        )}
+        <Heading
+          heading={`Search Results for ${this.parsed.tagLabel}`}
+          type="h1"
+        ></Heading>
         {this.state.education.length > 0 && (
           <div>
             <Education
               education={this.state.education}
               showInfo={false}
               heading={`Course work related to ${this.parsed.tagLabel}`}
+            />
+          </div>
+        )}
+        {this.state.experiences.length > 0 && (
+          <div>
+            <Experience
+              experiences={this.state.experiences}
+              heading={`Experiences related to ${this.parsed.tagLabel}`}
             />
           </div>
         )}
