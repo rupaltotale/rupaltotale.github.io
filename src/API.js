@@ -1,10 +1,23 @@
 import _ from "lodash";
 import Tabletop from "tabletop";
+import Experiences from "./Data/Experiences.json";
+import Education from "./Data/Education.json";
+import Projects from "./Data/Projects.json";
+// import data from "./myjsonfile.json";
 
 export default class API {
   constructor() {
     this.allTags = [];
     this.tagsFiltered = false;
+    this.data = {
+      Experiences: Experiences,
+      Education: Education,
+      Projects: Projects,
+    };
+  }
+
+  get(type, completion) {
+    completion(this.getDataAsObjects(this.data[type]));
   }
 
   getDataAsObjects(data) {
@@ -19,23 +32,23 @@ export default class API {
           description: [data[i].description],
           tags: data[i].tags
             .split(",")
-            .map(tag => {
+            .map((tag) => {
               const value = tag.toLowerCase().trim();
               const tagObj = {
                 value,
-                label: this.getTagFormatted(value)
+                label: this.getTagFormatted(value),
               };
               this.allTags.push(tagObj);
               return tagObj;
             })
-            .sort(function(tag1, tag2) {
+            .sort(function (tag1, tag2) {
               return tag1.value.localeCompare(tag2.value);
             }),
           gallery: data[i].gallery,
           startTime: data[i].startTime,
           endTime: data[i].endTime !== "" ? data[i].endTime : null,
           projectType: data[i].projectType,
-          url: data[i].url
+          url: data[i].url,
         };
       } else if (data[i].description !== "") {
         item.description.push(data[i].description);
@@ -64,7 +77,7 @@ export default class API {
       "Fall",
       "Oct",
       "Nov",
-      "Dec"
+      "Dec",
     ];
     return dataObjects.sort((obj1, obj2) => {
       const date1 = obj1.startTime.split(" ");
@@ -75,17 +88,6 @@ export default class API {
         );
       }
       return date2[1] - date1[1];
-    });
-  }
-
-  get(sheet, completion) {
-    Tabletop.init({
-      key: process.env.REACT_APP_TOKEN,
-      simpleSheet: false,
-      callback: (data, tabletop) => {
-        // const experiencesData = tabletop.sheets(sheet).elements;
-        completion(this.getDataAsObjects(tabletop.sheets(sheet).elements));
-      }
     });
   }
 
@@ -108,7 +110,7 @@ export default class API {
       "ruby on rails": "Ruby on Rails",
       "sql server": "SQL Server",
       wordpress: "WordPress",
-      "visual basic": "Visual Basic"
+      "visual basic": "Visual Basic",
     };
     const displayTag = special[tag];
     return displayTag ? displayTag : tag[0].toUpperCase() + tag.slice(1);
@@ -116,7 +118,7 @@ export default class API {
 
   getUniqueTags(shouldReturn: boolean) {
     if (shouldReturn)
-      return _.uniqBy(this.allTags, "value").sort(function(tag1, tag2) {
+      return _.uniqBy(this.allTags, "value").sort(function (tag1, tag2) {
         return tag1.value.localeCompare(tag2.value);
       });
     return [];
