@@ -93,7 +93,7 @@
 .titleNavLink,
 .titleNavLink:hover,
 .titleNavLink:active {
-  background: linear-gradient(135deg, rgb(250, 192, 66), rgb(143, 0, 0));
+  background: linear-gradient(135deg, rgb(134, 133, 129), rgb(161, 154, 154));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   align-self: center;

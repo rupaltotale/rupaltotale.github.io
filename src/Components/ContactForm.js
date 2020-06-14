@@ -62,10 +62,10 @@ class ContactForm extends Component {
             options={[
               {
                 label: "1 - Needs improvement",
-                value: "1 - Needs improvement"
+                value: "1 - Needs improvement",
               },
               { label: "2 - No comment", value: "2 - No comment" },
-              { label: "3 - Good to go", value: "3 - Good to go" }
+              { label: "3 - Good to go", value: "3 - Good to go" },
             ]}
             name="rating"
           />

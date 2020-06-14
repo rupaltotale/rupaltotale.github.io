@@ -1,5 +1,4 @@
 import _ from "lodash";
-import Tabletop from "tabletop";
 import Experiences from "./Data/Experiences.json";
 import Education from "./Data/Education.json";
 import Projects from "./Data/Projects.json";

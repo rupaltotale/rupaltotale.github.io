@@ -7,21 +7,21 @@ import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
   static propTypes = {
-    options: PropTypes.array
+    options: PropTypes.array,
   };
 
   state = {
     selectedTag: null,
-    redirectToSearch: false
+    redirectToSearch: false,
   };
 
-  handleChange = selectedTag => {
+  handleChange = (selectedTag) => {
     this.setState({ selectedTag });
   };
 
   searchForTag() {
     const { selectedTag } = this.state;
-    this.setState({ selectedTag: null });
+    // this.setState({ selectedTag: null });
     if (selectedTag) {
       this.props.history.push(
         `/search?tagValue=${selectedTag.value}&tagLabel=${selectedTag.label}`
@@ -41,15 +41,15 @@ class SearchBar extends Component {
             container: (provided, state) => ({
               ...provided,
               width: 200,
-              margin: 5
-            })
+              margin: 5,
+            }),
           }}
           className="mr-sm-3"
           onChange={this.handleChange}
           value={this.state.selectedTag}
           // isMulti
         />
-        <Button variant="success" onClick={this.searchForTag.bind(this)}>
+        <Button variant="secondary" onClick={this.searchForTag.bind(this)}>
           Search
         </Button>
       </Form>

@@ -63,7 +63,7 @@ class Home extends Component {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <h3>Form submitted successfully</h3>
@@ -76,9 +76,8 @@ class Home extends Component {
         </IconContext.Provider>
         <hr />
         <h6 style={{ textAlign: "center" }}>
-          Thank you for reaching out. I will get back to you through the
-          provided email with a custom response in around 5 business days. Here
-          is what was submitted:
+          Thank you for reaching out! I will get back to you in around 1 - 2
+          business days. Here is what was submitted:
         </h6>
         <br />
         <p>
