@@ -53,7 +53,7 @@
 }
 
 .jumbo-aboutme::before {
-  content: "";
+  content: '';
   background: rgb(29, 28, 28);
   opacity: 0.8;
   top: 0;
@@ -64,12 +64,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* z-index: -1; */
 }
 
 .jumbo-gray {
   border-radius: 0%;
-  /* border-bottom: 1px dashed #616262; */
   border-top: 1px solid #616262;
   padding: 10px;
   margin: 0;
@@ -93,14 +91,14 @@
 .titleNavLink,
 .titleNavLink:hover,
 .titleNavLink:active {
-  background: linear-gradient(135deg, rgb(134, 133, 129), rgb(161, 154, 154));
+  background: linear-gradient(135deg, rgb(224, 149, 9), rgb(230, 88, 6));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   align-self: center;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.75em;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding-right: 10px;
 }
 
