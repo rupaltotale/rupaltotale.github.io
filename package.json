@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "http://rupaltotale.github.io/",
+  "homepage": "https://rupaltotale.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,6 +45,6 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.2.0"
   }
 }
