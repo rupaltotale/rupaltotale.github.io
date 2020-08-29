@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Heading from "../Components/Heading";
-import { Image } from "react-bootstrap";
-import JumboListing from "../Components/JumboListing";
-import PropTypes from "prop-types";
+import Heading from '../Components/Heading';
+import { Image } from 'react-bootstrap';
+import JumboListing from '../Components/JumboListing';
+import PropTypes from 'prop-types';
 
 class Experience extends Component {
   // constructor(props) {
@@ -15,7 +15,8 @@ class Experience extends Component {
       return (
         <JumboListing
           key={`experience-${index}`}
-          title={experience.title}
+          title={experience.title.split(',')[0]}
+          subtitle={experience.title.split(',')[1]}
           description={experience.description}
           tags={experience.tags}
           gallery={
@@ -29,7 +30,7 @@ class Experience extends Component {
           }
           startTime={experience.startTime}
           endTime={experience.endTime}
-          type={"ShadowBox"}
+          type={'ShadowBox'}
         />
       );
     });
@@ -37,8 +38,8 @@ class Experience extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Heading heading={this.props.heading} type="h2"></Heading>
+      <div className='container'>
+        <Heading heading={this.props.heading} type='h2'></Heading>
         {this.renderExperiences()}
       </div>
     );
@@ -47,7 +48,7 @@ class Experience extends Component {
 
 Experience.propTypes = {
   experiences: PropTypes.array.isRequired,
-  heading: PropTypes.string.isRequired
+  heading: PropTypes.string.isRequired,
 };
 
 export default Experience;

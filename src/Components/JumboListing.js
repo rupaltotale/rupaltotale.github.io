@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Jumbotron, Container, Row, Col } from "react-bootstrap";
-import Description from "./Description";
-import Tags from "./Tags";
-import TimePeriod from "./TimePeriod";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
+import Description from './Description';
+import Tags from './Tags';
+import TimePeriod from './TimePeriod';
 
 class JumboListing extends Component {
   render() {
@@ -11,11 +11,16 @@ class JumboListing extends Component {
     return (
       <Jumbotron
         className={
-          this.props.type === "ShadowBox" ? "jumbo-shadow" : "jumbo-gray"
+          this.props.type === 'ShadowBox' ? 'jumbo-shadow' : 'jumbo-gray'
         }
       >
         <Container>
-          <h3>{this.props.title}</h3>
+          <h3>
+            {this.props.title}{' '}
+            {this.props.subtitle && (
+              <span className='subtitle'>@ {this.props.subtitle}</span>
+            )}
+          </h3>
           <TimePeriod
             startTime={this.props.startTime}
             endTime={this.props.endTime}
@@ -46,6 +51,7 @@ class JumboListing extends Component {
 
 JumboListing.propTypes = {
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
   startTime: PropTypes.string.isRequired,
   // Optional
@@ -53,7 +59,7 @@ JumboListing.propTypes = {
   gallery: PropTypes.element,
   endTime: PropTypes.string,
   sourceCodeUrl: PropTypes.string,
-  type: PropTypes.oneOf(["GrayBox", "ShadowBox"])
+  type: PropTypes.oneOf(['GrayBox', 'ShadowBox']),
 };
 
 export default JumboListing;
