@@ -87,7 +87,7 @@ I have a contact form on this website and initially I was planning to send the d
 
 3. And voila, the data entered in the form should be sent to your form-data inbox and your mail (you need to configure this in the Email section) upon hitting submit.
 
-There are quite a few things you can configure with form-data but I will leave figuring that out that to the reader.
+There are quite a few things you can configure with form-data but I will leave figuring that out to the reader.
 
 ### Host/deploy a react web app with GH Pages
 
