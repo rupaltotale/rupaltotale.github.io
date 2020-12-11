@@ -60,7 +60,6 @@ export default class API {
 
   getSortByDate(dataObjects) {
     const comparisonArray = [
-      'Present',
       'Winter',
       'Jan',
       'Feb',
@@ -77,11 +76,22 @@ export default class API {
       'Oct',
       'Nov',
       'Dec',
+      'Present',
     ];
+    const currentYear = new Date().getFullYear().toString();
     return dataObjects.sort((obj1, obj2) => {
-      const date1 = obj1.startTime.split(' ');
-      const date2 = obj2.startTime.split(' ');
-      if (date1[1] === date2[1]) {
+      const date1 = obj1.endTime ? obj1.endTime.split(' ') : obj1.startTime.split(' ');
+      const date2 = obj2.endTime ? obj2.endTime.split(' ') : obj2.startTime.split(' ');
+      if (date1.length < 2) {
+        date1.push(currentYear)
+      }
+      if (date2.length < 2) {
+        date2.push(currentYear)
+      }
+      if (date1[1] === date2[1]) { // the year is the same...
+
+        console.log(obj1, obj2)
+        console.log(comparisonArray.indexOf(date1[0]), comparisonArray.indexOf(date2[0]))
         return (
           comparisonArray.indexOf(date2[0]) - comparisonArray.indexOf(date1[0])
         );
@@ -112,6 +122,7 @@ export default class API {
       'sql server': 'SQL Server',
       wordpress: 'WordPress',
       'visual basic': 'Visual Basic',
+      'jdbc': 'JDBC'
     };
     const displayTag = special[tag];
     return displayTag ? displayTag : tag[0].toUpperCase() + tag.slice(1);
