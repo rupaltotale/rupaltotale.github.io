@@ -31,10 +31,10 @@ export default class Education extends Component {
             subtitle={'Cal Poly SLO'}
             description={[
               'Senior academic standing with 4.0 major GPA and 3.99 overall GPA',
-              "Have made Dean's Honors list for all quarters attended and President's Honors list for the 2018-2019 school year",
-              'Active member of WISH, SWE, Hack4Impact, and Cal Poly App Development',
-              'Intend to minor in Data Science and get a Masters in Computer Science',
-              'Incoming Data Science Fellow for upcoming academic year',
+              "Made Dean's Honors list for all quarters attended and President's Honors list for the 2018-2019 school year",
+              // 'Intend to minor in Data Science and get a Masters in Computer Science',
+              'Data Science Fellow for 2020-2021 academic year',
+              'Active member of WISH, Hack4Impact',
               'Relevant coursework discussed below',
             ]}
             gallery={
