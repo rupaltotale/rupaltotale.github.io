@@ -136,7 +136,7 @@ For more information, see [References](#references).
 
 ### Create a snappy web app
 
-This is a single page web app with client-side routing accomplished by react-router. By using react-router, the navigation to different pages does not required a refresh and thus allows for a seamless user experience.
+This is a single page web app with client-side routing accomplished by react-router. By using react-router, navigation to different pages does not require a refresh and thus allows for a seamless user experience.
 
 To get started with react-router, you should check out their [comprehensive documentation](https://reacttraining.com/react-router/web/guides/quick-start).
 
